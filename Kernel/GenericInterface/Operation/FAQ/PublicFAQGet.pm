@@ -261,8 +261,8 @@ sub Run {
                         FileID => $Attachment->{FileID},
                         UserID => $UserID,
                     );
-                    $File{FileID} = $Attachment->{FileID}
-                    $File{Inline} = $Attachment->{Inline}
+                    $File{FileID} = $Attachment->{FileID};
+                    $File{Inline} = $Attachment->{Inline};
                     # convert content to base64
                     $File{Content} = encode_base64( $File{Content} );
                 }
