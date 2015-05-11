@@ -261,7 +261,8 @@ sub Run {
                         FileID => $Attachment->{FileID},
                         UserID => $UserID,
                     );
-
+                    $File{FileID} = $Attachment->{FileID}
+                    $File{Inline} = $Attachment->{Inline}
                     # convert content to base64
                     $File{Content} = encode_base64( $File{Content} );
                 }
@@ -270,7 +271,9 @@ sub Run {
                         Filename    => $Attachment->{Filename},
                         ContentType => $Attachment->{ContentType},
                         Filesize    => $Attachment->{Filesize},
-                        Content     => ''
+                        Content     => '',
+                        FileID      => $Attachment->{FileID},
+                        Inline      => $Attachment->{Inline},
                     );
                 }
                 push @Attachments, {%File};
