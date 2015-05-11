@@ -273,7 +273,7 @@ sub Run {
                         Filesize    => $Attachment->{Filesize},
                         Content     => '',
                         FileID      => $Attachment->{FileID},
-                        Inline      => $Attachment->{Inline},
+                        Inline      => $Attachment->{Inline}
                     );
                 }
                 push @Attachments, {%File};
