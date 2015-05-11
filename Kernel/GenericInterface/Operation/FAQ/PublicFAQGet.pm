@@ -115,7 +115,7 @@ perform PublicFAQGet Operation. This will return a Public FAQ entry.
                             Filesize    => '540286',                # file size in bytes
                             ContentType => 'image/jpeg',
                             Filename    => 'Error.jpg',
-                            Content     => '...'                    # base64 content
+                            Content     => '...',                    # base64 content
                             Inline      => 0,                       # inline attachment?
                             FileID      => 34                       
                         },
