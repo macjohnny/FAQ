@@ -116,12 +116,16 @@ perform PublicFAQGet Operation. This will return a Public FAQ entry.
                             ContentType => 'image/jpeg',
                             Filename    => 'Error.jpg',
                             Content     => '...'                    # base64 content
+                            Inline      => 0,                       # inline attachment?
+                            FileID      => 34                       
                         },
                         {
                             Filesize    => '540286',                # file size in bytes
                             ContentType => 'image/jpeg',
                             Filename    => 'Pencil.jpg',
-                            Content     => '...'                    # base64 content
+                            Content     => '...',                    # base64 content
+                            Inline      => 0,                       # inline attachment?
+                            FileID      => 34                       
                         },
                     },
                 },
@@ -261,7 +265,8 @@ sub Run {
                         FileID => $Attachment->{FileID},
                         UserID => $UserID,
                     );
-
+                    $File{FileID} = $Attachment->{FileID};
+                    $File{Inline} = $Attachment->{Inline};
                     # convert content to base64
                     $File{Content} = encode_base64( $File{Content} );
                 }
@@ -270,7 +275,9 @@ sub Run {
                         Filename    => $Attachment->{Filename},
                         ContentType => $Attachment->{ContentType},
                         Filesize    => $Attachment->{Filesize},
-                        Content     => ''
+                        Content     => '',
+                        FileID      => $Attachment->{FileID},
+                        Inline      => $Attachment->{Inline}
                     );
                 }
                 push @Attachments, {%File};
