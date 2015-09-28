@@ -1861,6 +1861,8 @@ shell> $OTRS_HOME/bin/otrs.WebserviceConfig.pl -a list
                <Filesize>?</Filesize>
                <ContentType>?</ContentType>
                <Content>cid:1269416154096</Content>
+               <Inline>?</Inline>
+               <FileID>?</FileID>
             </Attachment>
          </FAQItem>
       </PublicFAQGetResponse>
@@ -1909,12 +1911,16 @@ shell> $OTRS_HOME/bin/otrs.WebserviceConfig.pl -a list
                 <ContentType>text/plain</ContentType>
                 <Filename>Details.txt</Filename>
                 <Filesize>296</Filesize>
+               <Inline>0</Inline>
+               <FileID>4</FileID>
              </Attachment>
              <Attachment>
                 <Content>...==</Content>
                 <ContentType>text/plain</ContentType>
                 <Filename>Text.bin</Filename>
                 <Filesize>980</Filesize>
+               <Inline>0</Inline>
+               <FileID>5</FileID>
              </Attachment>
           </FAQItem>
           <FAQItem>
