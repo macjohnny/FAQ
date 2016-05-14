@@ -1,6 +1,5 @@
 # --
-# Kernel/System/FAQ.pm - all FAQ functions
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -165,6 +164,7 @@ Returns:
         Field6            => 'Comments',
         Approved          => 1,                              # or 0
         ValidID           => 1,
+        ContentType       => 'text/plain',                  # or 'text/html'
         Valid             => 'valid',
         Keywords          => 'KeyWord1 KeyWord2',
         Votes             => 0,                              # number of votes
@@ -236,7 +236,7 @@ sub FAQGet {
             SQL => '
                 SELECT i.f_name, i.f_language_id, i.f_subject, i.created, i.created_by, i.changed,
                     i.changed_by, i.category_id, i.state_id, c.name, s.name, l.name, i.f_keywords,
-                    i.approved, i.valid_id, i.f_number, st.id, st.name
+                    i.approved, i.valid_id, i.content_type, i.f_number, st.id, st.name
                 FROM faq_item i, faq_category c, faq_state s, faq_state_type st, faq_language l
                 WHERE i.state_id = s.id
                     AND s.type_id = st.id
@@ -272,9 +272,10 @@ sub FAQGet {
                 Keywords      => $Row[12],
                 Approved      => $Row[13],
                 ValidID       => $Row[14],
-                Number        => $Row[15],
-                StateTypeID   => $Row[16],
-                StateTypeName => $Row[17],
+                ContentType   => $Row[15],
+                Number        => $Row[16],
+                StateTypeID   => $Row[17],
+                StateTypeName => $Row[18],
             );
         }
 
@@ -488,21 +489,22 @@ sub ItemFieldGet {
 add an article
 
     my $ItemID = $FAQObject->FAQAdd(
-        Title      => 'Some Text',
-        CategoryID => 1,
-        StateID    => 1,
-        LanguageID => 1,
-        Number     => '13402',          # (optional)
-        Keywords   => 'some keywords',  # (optional)
-        Field1     => 'Symptom...',     # (optional)
-        Field2     => 'Problem...',     # (optional)
-        Field3     => 'Solution...',    # (optional)
-        Field4     => 'Field4...',      # (optional)
-        Field5     => 'Field5...',      # (optional)
-        Field6     => 'Comment...',     # (optional)
-        Approved   => 1,                # (optional)
-        ValidID    => 1,
-        UserID     => 1,
+        Title       => 'Some Text',
+        CategoryID  => 1,
+        StateID     => 1,
+        LanguageID  => 1,
+        Number      => '13402',          # (optional)
+        Keywords    => 'some keywords',  # (optional)
+        Field1      => 'Symptom...',     # (optional)
+        Field2      => 'Problem...',     # (optional)
+        Field3      => 'Solution...',    # (optional)
+        Field4      => 'Field4...',      # (optional)
+        Field5      => 'Field5...',      # (optional)
+        Field6      => 'Comment...',     # (optional)
+        Approved    => 1,                # (optional)
+        ValidID     => 1,
+        ContentType => 'text/plain',     # or 'text/html'
+        UserID      => 1,
     );
 
 Returns:
@@ -518,7 +520,7 @@ sub FAQAdd {
     my $LogObject = $Kernel::OM->Get('Kernel::System::Log');
 
     # check needed stuff
-    for my $Argument (qw(CategoryID StateID LanguageID Title UserID)) {
+    for my $Argument (qw(CategoryID StateID LanguageID Title UserID ContentType)) {
         if ( !$Param{$Argument} ) {
             $LogObject->Log(
                 Priority => 'error',
@@ -577,20 +579,21 @@ sub FAQAdd {
     }
 
     return if !$Kernel::OM->Get('Kernel::System::DB')->Do(
-        SQL => 'INSERT INTO faq_item '
-            . '(f_number, f_name, f_language_id, f_subject, '
-            . 'category_id, state_id, f_keywords, approved, valid_id, '
-            . 'f_field1, f_field2, f_field3, f_field4, f_field5, f_field6, '
-            . 'created, created_by, changed, changed_by)'
-            . 'VALUES ('
-            . '?, ?, ?, ?, '
-            . '?, ?, ?, ?, ?, '
-            . '?, ?, ?, ?, ?, ?, '
-            . 'current_timestamp, ?, current_timestamp, ?)',
+        SQL => '
+            INSERT INTO faq_item
+                (f_number, f_name, f_language_id, f_subject,
+                category_id, state_id, f_keywords, approved, valid_id, content_type,
+                f_field1, f_field2, f_field3, f_field4, f_field5, f_field6,
+                created, created_by, changed, changed_by)
+            VALUES
+                (?, ?, ?, ?,
+                ?, ?, ?, ?, ?, ?,
+                ?, ?, ?, ?, ?, ?,
+                current_timestamp, ?, current_timestamp, ?)',
         Bind => [
             \$Param{Number},     \$Param{Name},    \$Param{LanguageID}, \$Param{Title},
             \$Param{CategoryID}, \$Param{StateID}, \$Param{Keywords},   \$Param{Approved},
-            \$Param{ValidID},
+            \$Param{ValidID},    \$Param{ContentType},
             \$Param{Field1}, \$Param{Field2}, \$Param{Field3},
             \$Param{Field4}, \$Param{Field5}, \$Param{Field6},
             \$Param{UserID}, \$Param{UserID},
@@ -598,37 +601,42 @@ sub FAQAdd {
     );
 
     # build SQL to get the id of the newly inserted FAQ article
-    my $SQL = 'SELECT id FROM faq_item '
-        . 'WHERE f_number = ? '
-        . 'AND f_name = ? '
-        . 'AND f_language_id = ? '
-        . 'AND category_id = ? '
-        . 'AND state_id = ? '
-        . 'AND approved = ? '
-        . 'AND valid_id = ? '
-        . 'AND created_by = ? '
-        . 'AND changed_by = ? ';
+    my $SQL = '
+        SELECT id FROM faq_item
+        WHERE f_number = ?
+            AND f_name = ?
+            AND f_language_id = ?
+            AND category_id = ?
+            AND state_id = ?
+            AND approved = ?
+            AND valid_id = ?
+            AND created_by = ?
+            AND changed_by = ?';
 
     # handle the title
     if ( $Param{Title} ) {
-        $SQL .= 'AND f_subject = ? ';
+        $SQL .= '
+            AND f_subject = ? ';
     }
 
     # additional SQL for the case that the title is an empty string
     # and the database is oracle, which treats empty strings as NULL
     else {
-        $SQL .= 'AND ((f_subject = ?) OR (f_subject IS NULL)) ';
+        $SQL .= '
+            AND ((f_subject = ?) OR (f_subject IS NULL)) ';
     }
 
     # handle the keywords
     if ( $Param{Keywords} ) {
-        $SQL .= 'AND f_keywords = ? ';
+        $SQL .= '
+            AND f_keywords = ? ';
     }
 
     # additional SQL for the case that keywords is an empty string
     # and the database is oracle, which treats empty strings as NULL
     else {
-        $SQL .= 'AND ((f_keywords = ?) OR (f_keywords IS NULL)) ';
+        $SQL .= '
+            AND ((f_keywords = ?) OR (f_keywords IS NULL)) ';
     }
 
     # get database object
@@ -710,11 +718,13 @@ update an article
         LanguageID  => 1,
         Approved    => 1,
         ValidID     => 1,
+        ContentType => 'text/plan',     # or 'text/html'
         Title       => 'Some Text',
         Field1      => 'Problem...',
         Field2      => 'Solution...',
         UserID      => 1,
-        ApprovalOff => 1, (optional, if set to 1 approval is ignored. This is important when called from FAQInlineAttachmentURLUpdate)
+        ApprovalOff => 1,               # optional, (if set to 1 approval is ignored. This is
+                                        #   important when called from FAQInlineAttachmentURLUpdate)
     );
 
 Returns:
@@ -727,7 +737,7 @@ sub FAQUpdate {
     my ( $Self, %Param ) = @_;
 
     # check needed stuff
-    for my $Argument (qw(ItemID CategoryID StateID LanguageID Title UserID)) {
+    for my $Argument (qw(ItemID CategoryID StateID LanguageID Title UserID ContentType)) {
         if ( !$Param{$Argument} ) {
             $Kernel::OM->Get('Kernel::System::Log')->Log(
                 Priority => 'error',
@@ -756,20 +766,19 @@ sub FAQUpdate {
     }
 
     return if !$Kernel::OM->Get('Kernel::System::DB')->Do(
-        SQL => 'UPDATE faq_item SET '
-            . 'f_name = ?, f_language_id = ?, '
-            . 'f_subject = ?, category_id = ?, '
-            . 'state_id = ?, f_keywords = ?, valid_id = ?, '
-            . 'f_field1 = ?, f_field2 = ?, '
-            . 'f_field3 = ?, f_field4 = ?, '
-            . 'f_field5 = ?, f_field6 = ?, '
-            . 'changed = current_timestamp, '
-            . 'changed_by = ? '
-            . 'WHERE id = ?',
+        SQL => '
+            UPDATE faq_item SET
+                f_name = ?, f_language_id = ?, f_subject = ?, category_id = ?,
+                state_id = ?, f_keywords = ?, valid_id = ?, content_type = ?,
+                f_field1 = ?, f_field2 = ?,
+                f_field3 = ?, f_field4 = ?,
+                f_field5 = ?, f_field6 = ?,
+                changed = current_timestamp,
+                changed_by = ?
+            WHERE id = ?',
         Bind => [
-            \$Param{Name},    \$Param{LanguageID},
-            \$Param{Title},   \$Param{CategoryID},
-            \$Param{StateID}, \$Param{Keywords}, \$Param{ValidID},
+            \$Param{Name},    \$Param{LanguageID}, \$Param{Title},   \$Param{CategoryID},
+            \$Param{StateID}, \$Param{Keywords},   \$Param{ValidID}, \$Param{ContentType},
             \$Param{Field1},  \$Param{Field2},
             \$Param{Field3},  \$Param{Field4},
             \$Param{Field5},  \$Param{Field6},
@@ -2108,6 +2117,149 @@ sub FAQArticleTitleClean {
     }
 
     return $Title;
+}
+
+=item FAQContentTypeSet()
+
+Sets the content type of 1, some or all FAQ items, by a given parameter or determined by the FAQ item content
+
+    my $Success = $FAQObject->FAQContentTypeSet(
+        FAQItemIDs  => [ 1, 2, 3 ],             # optional,
+        ContentType => 'some content type',     # optional,
+    );
+
+=cut
+
+sub FAQContentTypeSet {
+    my ( $Self, %Param ) = @_;
+
+    if ( $Param{FAQItemIDs} && !IsArrayRefWithData( $Param{FAQItemIDs} ) ) {
+        $Kernel::OM->Get('Kernel::System::Log')->Log(
+            Priority => 'error',
+            Message  => "Invalid FAQItemIDs format!",
+        );
+
+        return;
+    }
+
+    # Get config object.
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+
+    my $ContentType = $Param{ContentType} || '';
+
+    # Get default content type from the config if it was not given.
+    if ( !$ContentType ) {
+
+        $ContentType = 'text/plain';
+        if ( $ConfigObject->Get('Frontend::RichText') && $ConfigObject->Get('FAQ::Item::HTML') ) {
+            $ContentType = 'text/html';
+        }
+    }
+
+    # SQL to set the content type (default or given).
+    my $SQL = '
+        UPDATE faq_item
+        SET content_type = ?';
+
+    # Get FAQ item IDs from the param.
+    my @FAQItemIDs = @{ $Param{FAQItemIDs} // [] };
+
+    # Restrict to only given FAQ item IDs (if any).
+    if (@FAQItemIDs) {
+
+        my $IDString = join ',', @FAQItemIDs;
+
+        $SQL .= "
+            WHERE id IN ($IDString)";
+    }
+
+    # Get DB object.
+    my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
+
+    # Set the content type either by the given param or according to the system settings.
+    return if !$DBObject->Do(
+        SQL  => $SQL,
+        Bind => [
+            \$ContentType,
+        ],
+    );
+
+    # No need to go further if content type was given (it was already set).
+    if ( $Param{ContentType} ) {
+
+        # Delete cache
+        $Kernel::OM->Get('Kernel::System::Cache')->CleanUp(
+            Type => 'FAQ',
+        );
+
+        return 1
+    }
+
+    # Otherwise content type has to be determined by the FAQ item content.
+
+    # Get all FAQIDs (if no faq item was given).
+    if ( !@FAQItemIDs ) {
+        return if !$DBObject->Prepare(
+            SQL => '
+                SELECT DISTINCT(faq_item.id)
+                FROM faq_item
+                ORDER BY id ASC',
+        );
+
+        while ( my @Row = $DBObject->FetchrowArray() ) {
+            push @FAQItemIDs, $Row[0];
+        }
+    }
+
+    # Loop trough the FAQ items.
+    ITEMID:
+    for my $ItemID (@FAQItemIDs) {
+        my $DeterminedContentType = 'text/plain';
+
+        # Get the contents of each field
+        FIELD:
+        for my $Field (qw(Field1 Field2 Field3 Field4 Field5 Field6)) {
+
+            my $FieldContent = $Self->ItemFieldGet(
+                ItemID => $ItemID,
+                Field  => $Field,
+                UserID => 1,
+            );
+
+            next FIELD if !$FieldContent;
+
+            # if field content seams to be HTML set the content type to HTML
+            if (
+                $FieldContent
+                =~ m{(?: <br\s*/> | </li> | </ol> | </ul> | </table> | </tr> | </td> | </div> | </o> | </i> | </span> | </h\d> | </p> | </pre> )}msx
+                )
+            {
+                $DeterminedContentType = 'text/html';
+                last FIELD;
+            }
+        }
+
+        next ITEMID if $DeterminedContentType eq $ContentType;
+
+        # Set the content type according to the field content.
+        return if !$DBObject->Do(
+            SQL => '
+                UPDATE faq_item
+                SET content_type = ?
+                WHERE id =?',
+            Bind => [
+                \$DeterminedContentType,
+                \$ItemID,
+            ],
+        );
+    }
+
+    # Delete cache
+    $Kernel::OM->Get('Kernel::System::Cache')->CleanUp(
+        Type => 'FAQ',
+    );
+
+    return 1;
 }
 
 =begin Internal:

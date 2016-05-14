@@ -1,6 +1,5 @@
 # --
-# Kernel/GenericInterface/Operation/FAQ/PublicFAQGet.pm - GenericInterface FAQ PublicFAQGet operation backend
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -105,23 +104,26 @@ perform PublicFAQGet Operation. This will return a Public FAQ entry.
                     StateTypeID       => 1,
                     StateTypeName     => 'internal',                     # or 'external' or 'public'
                     CreatedBy         => 1,
-                    Changed          => '2011-01-05 21:53:50',
+                    Changed           => '2011-01-05 21:53:50',
                     ChangedBy         => '1',
                     Created           => '2011-01-05 21:53:50',
                     Name              => '1294286030-31.1697297104732',  # FAQ Article name or
                                                                          # systemtime + '-' + random number
+                    ContentType       => 'text/html',
                     Attachment => {
                         {
                             Filesize    => '540286',                # file size in bytes
                             ContentType => 'image/jpeg',
                             Filename    => 'Error.jpg',
-                            Content     => '...'                    # base64 content
+                            Content     => '...',                   # base64 content
+                            Inline      => 0,                       # specify if is an inline attachment
                         },
                         {
                             Filesize    => '540286',                # file size in bytes
                             ContentType => 'image/jpeg',
                             Filename    => 'Pencil.jpg',
-                            Content     => '...'                    # base64 content
+                            Content     => '...',                   # base64 content
+                            Inline      => 1,                       # specify if is an inline attachment
                         },
                     },
                 },
@@ -264,13 +266,15 @@ sub Run {
 
                     # convert content to base64
                     $File{Content} = encode_base64( $File{Content} );
+                    $File{Inline}  = $Attachment->{Inline};
                 }
                 else {
                     %File = (
                         Filename    => $Attachment->{Filename},
                         ContentType => $Attachment->{ContentType},
                         Filesize    => $Attachment->{Filesize},
-                        Content     => ''
+                        Content     => '',
+                        Inline      => $Attachment->{Inline},
                     );
                 }
                 push @Attachments, {%File};

@@ -1,6 +1,5 @@
 # --
-# Kernel/Language/ms_FAQ.pm - translation file
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -26,7 +25,7 @@ sub Data {
     $Self->{Translation}->{'Top 10 FAQ articles'} = 'Aritkel FAQ 10 terbaik';
     $Self->{Translation}->{'Subcategory of'} = 'Sub-kategori daripada';
     $Self->{Translation}->{'No rate selected!'} = 'Tiada kadar dipilih!';
-    $Self->{Translation}->{'Explorer'} = '';
+    $Self->{Translation}->{'Explorer'} = 'Peneroka';
     $Self->{Translation}->{'public (all)'} = 'Umum (Semua)';
     $Self->{Translation}->{'external (customer)'} = 'luaran (pelanggan)';
     $Self->{Translation}->{'internal (agent)'} = 'dalaman (ejen)';
@@ -50,12 +49,12 @@ sub Data {
     $Self->{Translation}->{'FAQ language updated!'} = 'Bahasa FAQ dikemaskini!';
     $Self->{Translation}->{'The name is required!'} = 'Nama diperlukan!';
     $Self->{Translation}->{'This language already exists!'} = 'Bahasa ini sudah wujud!';
-    $Self->{Translation}->{'Symptom'} = '';
-    $Self->{Translation}->{'Solution'} = '';
+    $Self->{Translation}->{'Symptom'} = 'Simptom';
+    $Self->{Translation}->{'Solution'} = 'Penyelesaian';
 
     # Template: AgentFAQAdd
     $Self->{Translation}->{'Add FAQ Article'} = 'Tambah artikel FAQ';
-    $Self->{Translation}->{'Keywords'} = '';
+    $Self->{Translation}->{'Keywords'} = 'Kata kunci';
     $Self->{Translation}->{'A category is required.'} = 'Kategori diperlukan.';
     $Self->{Translation}->{'Approval'} = 'Pengesahan';
 
@@ -84,11 +83,14 @@ sub Data {
     # Template: AgentFAQExplorer
     $Self->{Translation}->{'FAQ Explorer'} = 'FAQ-Explorer';
     $Self->{Translation}->{'Quick Search'} = 'Carian Pantas';
-    $Self->{Translation}->{'Wildcards are allowed.'} = '';
+    $Self->{Translation}->{'Wildcards are allowed.'} = 'Wildcards adalah dibenarkan.';
     $Self->{Translation}->{'Advanced Search'} = 'Carian Terperinci';
     $Self->{Translation}->{'Subcategories'} = 'Sub-kategori';
     $Self->{Translation}->{'FAQ Articles'} = 'Artiket FAQ';
     $Self->{Translation}->{'No subcategories found.'} = 'Tiada sub-kategori ditemui.';
+
+    # Template: AgentFAQHistory
+    $Self->{Translation}->{'History of'} = 'Sejarah untuk';
 
     # Template: AgentFAQJournalOverviewSmall
     $Self->{Translation}->{'No FAQ Journal data found.'} = 'Tiada data Jurnal FAQ ditemui.';
@@ -113,106 +115,113 @@ sub Data {
     # Template: AgentFAQOverviewSmall
     $Self->{Translation}->{'No FAQ data found.'} = 'Tiada data FAQ ditemui.';
 
-    # Template: AgentFAQPrint
-    $Self->{Translation}->{'FAQ-Info'} = 'Informasi FAQ';
-    $Self->{Translation}->{'Votes'} = 'Undian';
-    $Self->{Translation}->{'Last update'} = '';
-
     # Template: AgentFAQSearch
-    $Self->{Translation}->{'Keyword'} = '';
-    $Self->{Translation}->{'Vote (e. g. Equals 10 or GreaterThan 60)'} = '';
-    $Self->{Translation}->{'Rate (e. g. Equals 25% or GreaterThan 75%)'} = '';
-    $Self->{Translation}->{'Approved'} = '';
+    $Self->{Translation}->{'Keyword'} = 'Kata kunci';
+    $Self->{Translation}->{'Vote (e. g. Equals 10 or GreaterThan 60)'} = 'Undi (contoh: Bersamaan 10 atau lebih besar daripada 60)';
+    $Self->{Translation}->{'Rate (e. g. Equals 25% or GreaterThan 75%)'} = 'Kadar (contoh: Bersamaan 25% atau lebih besar daripada 75%)';
+    $Self->{Translation}->{'Approved'} = 'Diluluskan';
     $Self->{Translation}->{'Last changed by'} = 'Terakhir diubah oleh';
-    $Self->{Translation}->{'FAQ Article Create Time (before/after)'} = '';
-    $Self->{Translation}->{'FAQ Article Create Time (between)'} = '';
-    $Self->{Translation}->{'FAQ Article Change Time (before/after)'} = '';
-    $Self->{Translation}->{'FAQ Article Change Time (between)'} = '';
+    $Self->{Translation}->{'FAQ Article Create Time (before/after)'} = 'Waktu cipta artikel FAQ (sebelum/selepas)';
+    $Self->{Translation}->{'FAQ Article Create Time (between)'} = 'Waktu cipta artikel FAQ (di antara)';
+    $Self->{Translation}->{'FAQ Article Change Time (before/after)'} = 'Waktu perubahan artikel FAQ (sebelum/selepas)';
+    $Self->{Translation}->{'FAQ Article Change Time (between)'} = 'Waktu perubahan artikel FAQ (di antara)';
 
     # Template: AgentFAQSearchOpenSearchDescriptionFulltext
     $Self->{Translation}->{'FAQFulltext'} = 'FAQTeksPenuh';
 
     # Template: AgentFAQSearchSmall
     $Self->{Translation}->{'FAQ Search'} = 'Carian FAQ';
-    $Self->{Translation}->{'Profile Selection'} = '';
-    $Self->{Translation}->{'Vote'} = '';
-    $Self->{Translation}->{'No vote settings'} = '';
-    $Self->{Translation}->{'Specific votes'} = '';
-    $Self->{Translation}->{'e. g. Equals 10 or GreaterThan 60'} = '';
-    $Self->{Translation}->{'Rate'} = '';
-    $Self->{Translation}->{'No rate settings'} = '';
-    $Self->{Translation}->{'Specific rate'} = '';
-    $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = '';
-    $Self->{Translation}->{'FAQ Article Create Time'} = '';
-    $Self->{Translation}->{'Specific date'} = '';
-    $Self->{Translation}->{'Date range'} = '';
-    $Self->{Translation}->{'FAQ Article Change Time'} = '';
+    $Self->{Translation}->{'Profile Selection'} = 'Pilihan profil';
+    $Self->{Translation}->{'Vote'} = 'Undi';
+    $Self->{Translation}->{'No vote settings'} = 'Tiada tetapan undi';
+    $Self->{Translation}->{'Specific votes'} = 'Undi spesifik';
+    $Self->{Translation}->{'e. g. Equals 10 or GreaterThan 60'} = 'contoh: Sama dengan 10 atau Lebih besar daripada 60';
+    $Self->{Translation}->{'Rate'} = 'Kadar';
+    $Self->{Translation}->{'No rate settings'} = 'Tiada tetapan kadar';
+    $Self->{Translation}->{'Specific rate'} = 'Kadar spesifik';
+    $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = 'contoh: Sama dengan 25% atau lebih besar daripada 75%';
+    $Self->{Translation}->{'FAQ Article Create Time'} = 'Waktu cipta artikel FAQ';
+    $Self->{Translation}->{'FAQ Article Change Time'} = 'Waktu perubahan artikel FAQ';
 
     # Template: AgentFAQZoom
     $Self->{Translation}->{'FAQ Information'} = 'Informasi FAQ';
     $Self->{Translation}->{'Rating'} = 'Menilai';
     $Self->{Translation}->{'out of 5'} = 'daripada 5';
+    $Self->{Translation}->{'Votes'} = 'Undian';
     $Self->{Translation}->{'No votes found!'} = 'Tiada undian ditemui!';
     $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = 'Tiada undian ditemui! Jadilah orang pertama menilai aritl FAQ ini.';
     $Self->{Translation}->{'Download Attachment'} = 'Muat turun lampiran';
     $Self->{Translation}->{'To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS).'} =
-        '';
+        'Untuk membuka pautan dalam keterangan blok berikut, anda mungkin perlu menekan kekunci Ctrl atau Cmd atau Shift semasa menekan pautan (bergantung kepada pelayar dan sistem operasi anda).';
     $Self->{Translation}->{'How helpful was this article? Please give us your rating and help to improve the FAQ Database. Thank You!'} =
         'Berapa banyak arikel ini membantu? Sila beri kami penilaian anda dan bantu untuk meningkatkan pangkalan data FAQ. Terima Kasih!';
     $Self->{Translation}->{'not helpful'} = 'Tidak membantu';
     $Self->{Translation}->{'very helpful'} = 'Sangat membantu';
 
     # Template: AgentFAQZoomSmall
-    $Self->{Translation}->{'Add FAQ title to article subject'} = '';
+    $Self->{Translation}->{'Add FAQ title to article subject'} = 'Tambah tajuk FAQ pada subjek artikel';
     $Self->{Translation}->{'Insert FAQ Text'} = 'Masuk Teks FAQ';
-    $Self->{Translation}->{'Insert Full FAQ'} = '';
+    $Self->{Translation}->{'Insert Full FAQ'} = 'Masukkan FAQ penuh';
     $Self->{Translation}->{'Insert FAQ Link'} = 'Masuk pautan FAQ';
     $Self->{Translation}->{'Insert FAQ Text & Link'} = 'Masuk Teks FAQ & Pautan';
-    $Self->{Translation}->{'Insert Full FAQ & Link'} = '';
+    $Self->{Translation}->{'Insert Full FAQ & Link'} = 'Masukkan FAQ penuh dan pautan';
 
     # Template: CustomerFAQExplorer
     $Self->{Translation}->{'No FAQ articles found.'} = 'Tiada artikel FAQ dijumpai.';
 
     # Template: CustomerFAQSearch
     $Self->{Translation}->{'Fulltext search in FAQ articles (e. g. "John*n" or "Will*")'} = 'Carian Teks penuh dalam artikel FAQ (contoh. "John*n" or "Will*")';
-    $Self->{Translation}->{'Vote restrictions'} = '';
-    $Self->{Translation}->{'Only FAQ articles with votes...'} = '';
-    $Self->{Translation}->{'Rate restrictions'} = '';
-    $Self->{Translation}->{'Only FAQ articles with rate...'} = '';
-    $Self->{Translation}->{'Only FAQ articles created'} = '';
-    $Self->{Translation}->{'Only FAQ articles created between'} = '';
-    $Self->{Translation}->{'Search-Profile as Template?'} = '';
+    $Self->{Translation}->{'Vote restrictions'} = 'Sekatan undi';
+    $Self->{Translation}->{'Only FAQ articles with votes...'} = 'Hanya artikel FAQ berserta undi';
+    $Self->{Translation}->{'Rate restrictions'} = 'Sekatan kadar';
+    $Self->{Translation}->{'Only FAQ articles with rate...'} = 'Hanya artikel FAQ berserta kadar';
+    $Self->{Translation}->{'Only FAQ articles created'} = 'Hanya artikel FAQ yang dicipta';
+    $Self->{Translation}->{'Only FAQ articles created between'} = 'Hanya artikel FAQ yang dicipta di antara';
+    $Self->{Translation}->{'Search-Profile as Template?'} = 'Carian berprofil sebagai templat?';
 
     # Template: CustomerFAQZoom
-    $Self->{Translation}->{'Article Number'} = '';
+    $Self->{Translation}->{'Article Number'} = 'Nombor Artikel';
     $Self->{Translation}->{'Search for articles with keyword'} = 'Carian untuk artikel dengan kekunci perkataan';
 
     # Template: PublicFAQSearchOpenSearchDescriptionFAQNumber
     $Self->{Translation}->{'Public'} = 'Umum';
 
     # Template: PublicFAQSearchResultShort
-    $Self->{Translation}->{'Back to FAQ Explorer'} = '';
+    $Self->{Translation}->{'Back to FAQ Explorer'} = 'Balik kepada peneroka FAQ';
+
+    # Perl Module: Kernel/Modules/AgentFAQJournal.pm
+    $Self->{Translation}->{'FAQ Journal'} = 'jurnal FAQ';
+
+    # Perl Module: Kernel/Modules/AgentFAQPrint.pm
+    $Self->{Translation}->{'Last update'} = 'Kemaskini kali terakhir';
+    $Self->{Translation}->{'FAQ Dynamic Fields'} = 'Medan Dinamik FAQ';
+
+    # Perl Module: Kernel/Modules/AgentFAQSearch.pm
+    $Self->{Translation}->{'No Result!'} = 'Tiada Keputusan!';
+
+    # Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+    $Self->{Translation}->{'This article is empty!'} = 'Artikel ini kosong!';
 
     # SysConfig
     $Self->{Translation}->{'A filter for HTML output to add links behind a defined string. The element Image allows two input kinds. First the name of an image (e.g. faq.png). In this case the OTRS image path will be used. The second possibility is to insert the link to the image.'} =
         'Asingan untuk hasil keluaran untuk menambah pautan dibelakang jaringan string. Elemen gambar dibenarkan dua input. pertama nama gambar tersebut (faq.png). Dalam kes ini, jalan gambar OTRS akan digunakan. keduanya kemungkinan adalah untuk memasukkan pautan pada gambar.';
     $Self->{Translation}->{'CSS color for the voting result.'} = 'Warna CSS untuk keputusan undian.';
-    $Self->{Translation}->{'Cache Time To Leave for FAQ items.'} = '';
+    $Self->{Translation}->{'Cache Time To Leave for FAQ items.'} = 'Waktu cache untuk meninggalkan bagi item FAQ';
     $Self->{Translation}->{'Category Management'} = 'Pengurusan kategori';
     $Self->{Translation}->{'Decimal places of the voting result.'} = 'Titik perpuluhan daripada keputusan undian.';
     $Self->{Translation}->{'Default category name.'} = 'Kategori nama sedia ada.';
     $Self->{Translation}->{'Default language for FAQ articles on single language mode.'} = 'Bahasa sedia ada untuk artikel FAQ pada satu mod bahasa.';
     $Self->{Translation}->{'Default maximum size of the titles in a FAQ article to be shown.'} =
-        '';
+        'Saiz maksimum tetapan awal daripada tajuk dalam artikel FAQ untuk ditunjukkan.';
     $Self->{Translation}->{'Default priority of tickets for the approval of FAQ articles.'} =
         'Keutamaan sedia ada tiket untuk pengesahan artikel FAQ.';
     $Self->{Translation}->{'Default state for FAQ entry.'} = 'Keadaan sedia ada untuk kemasukan FAQ.';
     $Self->{Translation}->{'Default state of tickets for the approval of FAQ articles.'} = 'Keadaan sedia ada tiket untuk pengesahan daripada artikel FAQ.';
-    $Self->{Translation}->{'Default type of tickets for the approval of FAQ articles.'} = '';
+    $Self->{Translation}->{'Default type of tickets for the approval of FAQ articles.'} = 'Jenis tetapan awal tiket untuk kelulusan artikel FAQ.';
     $Self->{Translation}->{'Default value for the Action parameter for the public frontend. The Action parameter is used in the scripts of the system.'} =
         'Nilai sedia ada untuk tindakan parameter kepada depanakhir umum. Tindakan parameter digunakan dalam skrip sistem tersebut.';
     $Self->{Translation}->{'Define if the FAQ title should be concatenated to article subject.'} =
-        '';
+        'Tentukan jika tajuk FAQ perlu dirangkaikan kepada artikel subjek.';
     $Self->{Translation}->{'Defines an overview module to show the small view of a FAQ journal.'} =
         'Kenalpasti lihat semula modul untuk papar paparan kecil dari Jurnal FAQ.';
     $Self->{Translation}->{'Defines an overview module to show the small view of a FAQ list.'} =
@@ -226,15 +235,15 @@ sub Data {
     $Self->{Translation}->{'Defines the default FAQ attribute for FAQ sorting in the FAQ Explorer of the agent interface.'} =
         'Kenalpasti sifat sedia ada FAQ menyusun dalam carian FAQ daripada ejen interface';
     $Self->{Translation}->{'Defines the default FAQ attribute for FAQ sorting in the FAQ Explorer of the customer interface.'} =
-        '';
+        'Mentakrifkan tetapan awal sifat FAQ untuk susunan FAQ dalam peneroka FAQ antara muka pelanggan';
     $Self->{Translation}->{'Defines the default FAQ attribute for FAQ sorting in the FAQ Explorer of the public interface.'} =
-        '';
+        'Mentakrifkan tetapan awal sifat FAQ untuk susunan FAQ dalam peneroka FAQ antara muka orang awam';
     $Self->{Translation}->{'Defines the default FAQ order in the FAQ Explorer result of the agent interface. Up: oldest on top. Down: latest on top.'} =
-        '';
+        'Mentakrifkan perintah FAQ lalai dalam hasil FAQ Explorer bagi antara muka ejen. Atas: tertua di atas. Bawah: terkini di atas.';
     $Self->{Translation}->{'Defines the default FAQ order in the FAQ Explorer result of the customer interface. Up: oldest on top. Down: latest on top.'} =
-        '';
+        'Mentakrifkan perintah FAQ lalai dalam hasil FAQ Explorer bagi antara muka pelanggan. Atas: tertua di atas. Bawah: terkini di atas.';
     $Self->{Translation}->{'Defines the default FAQ order in the FAQ Explorer result of the public interface. Up: oldest on top. Down: latest on top.'} =
-        '';
+        'Mentakrifkan perintah FAQ lalai dalam hasil FAQ Explorer bagi antara muka orang awam. Atas: tertua di atas. Bawah: terkini di atas.';
     $Self->{Translation}->{'Defines the default FAQ order of a search result in the agent interface. Up: oldest on top. Down: latest on top.'} =
         'Mentakrifkan perintah lalai FAQ hasil carian dalam antara muka ejen. Atas: tertua di atas. Bawah: terbaru di atas.';
     $Self->{Translation}->{'Defines the default FAQ order of a search result in the customer interface. Up: oldest on top. Down: latest on top.'} =
@@ -242,83 +251,80 @@ sub Data {
     $Self->{Translation}->{'Defines the default FAQ order of a search result in the public interface. Up: oldest on top. Down: latest on top.'} =
         'Mentakrifkan perintah lalai FAQ hasil carian dalam antara muka awam. Atas: tertua di atas. Bawah: terbaru di atas.';
     $Self->{Translation}->{'Defines the default shown FAQ search attribute for FAQ search screen.'} =
-        '';
+        'Mentakrifkan lalai ditunjukkan FAQ atribut carian untuk skrin FAQ carian.';
     $Self->{Translation}->{'Defines the information to be inserted in a FAQ based Ticket. "Full FAQ" includes text, attachments and inline images.'} =
-        '';
+        'Mentakrifkan maklumat yang akan dimasukkan dalam tiket berdasarkan FAQ. "FAQ Penuh" termasuk teks, lampiran dan imej sebaris.';
     $Self->{Translation}->{'Defines the parameters for the dashboard backend. "Limit" defines the number of entries displayed by default. "Group" is used to restrict access to the plugin (e. g. Group: admin;group1;group2;). "Default" indicates if the plugin is enabled by default or if the user needs to enable it manually.'} =
-        '';
+        'Mentakrifkan parameter untuk backend papan pemuka. "Had" mentakrifkan bilangan penyertaan dipaparkan secara lalai. "Kumpulan" digunakan untuk menyekat akses kepada plugin (contoh: Kumpulan: admin; group1 ; group2 ;). "Default" menunjukkan jika plugin ini diaktifkan secara lalai atau jika pengguna perlu untuk membolehkan secara manual.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ Explorer. This option has no effect on the position of the column.'} =
         'Mentakrifkan lajur menunjukkan di Explorer FAQ. Pilihan ini tidak mempunyai kesan ke atas kedudukan tiang.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ journal. This option has no effect on the position of the column.'} =
         'Mentakrifkan ruangan yang ditunjukkan dalam jurnal FAQ. Pilihan ini tidak mempunyai kesan ke atas kedudukan tiang.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ search. This option has no effect on the position of the column.'} =
         'Mentakrifkan ruangan yang ditunjukkan dalam carian FAQ. Pilihan ini tidak mempunyai kesan ke atas kedudukan tiang.';
-    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible.'} =
-        'Mentakrifkan mana pautan \'Masukkan FAQ \' akan dipaparkan. Nota: AgentTicketActionCommon termasuk AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority dan AgentTicketResponsible.';
+    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed.'} = 'Mentakrifkan di mana pautan \'Insert FAQ\' akan dipaparkan.';
     $Self->{Translation}->{'Definition of FAQ item free text field.'} = 'Definisi item FAQ percuma bidang teks.';
     $Self->{Translation}->{'Delete this FAQ'} = 'Padam FAQ ini!';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ add screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin tambah FAQ dari paparan ejen. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan, 2 = Diaktifkan dan Diperlukan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ edit screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin edit FAQ dari paparan ejen. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan, 2 = Diaktifkan dan Diperlukan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ overview screen of the customer interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin tinjauan FAQ dari paparan ejen. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan, 2 = Diaktifkan dan Diperlukan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ overview screen of the public interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin tinjauan FAQ dari paparan orang awam. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan, 2 = Diaktifkan dan Diperlukan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ print screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin cetak FAQ dari paparan ejen. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ print screen of the customer interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin cetak FAQ dari paparan antara muka pelanggan. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ print screen of the public interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin cetak FAQ dari paparan orang awam. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ search screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and shown by default.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin carian FAQ dari paparan ejen. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan, 2 = Diaktifkan dan Diperlukan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ search screen of the customer interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and shown by default.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin carian FAQ dari paparan pelanggan. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan, 2 = Diaktifkan dan Diperlukan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ search screen of the public interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and shown by default.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin carian FAQ dari paparan orang awam. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan, 2 = Diaktifkan dan Diperlukan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ small format overview screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin tinjauan format kecil FAQ dari paparan ejen. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ zoom screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin zum FAQ dari paparan ejen. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ zoom screen of the customer interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin zum FAQ dari paparan antara muka pelanggan. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan.';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ zoom screen of the public interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '';
+        'Medan Dinamik ditunjukkan dalam skrin zum FAQ dari paparan orang awam. Tetapan Kemungkinan: 0 = Dilumpuhkan, 1 = Diaktifkan.';
     $Self->{Translation}->{'Edit this FAQ'} = 'Audit FAQ ini';
     $Self->{Translation}->{'Enable multiple languages on FAQ module.'} = 'Aktifkan pelbagai bahasa pada modul FAQ.';
     $Self->{Translation}->{'Enable voting mechanism on FAQ module.'} = 'Aktifkan undian mekanisma pada modul FAQ.';
-    $Self->{Translation}->{'FAQ Journal'} = 'jurnal FAQ';
     $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = 'Jurnal FAQ lihat semula "Kecil" had';
     $Self->{Translation}->{'FAQ Overview "Small" Limit'} = 'Lihat semula FAQ had "kecil"';
     $Self->{Translation}->{'FAQ limit per page for FAQ Journal Overview "Small"'} = 'Soalan Lazim had bagi setiap halaman untuk Tinjauan Jurnal FAQ "Kecil".';
     $Self->{Translation}->{'FAQ limit per page for FAQ Overview "Small"'} = 'Had FAQ setiap halaman untuk Tinjauan FAQ "Kecil".';
-    $Self->{Translation}->{'FAQ path separator.'} = 'Laluan pemisah FAQ.';
     $Self->{Translation}->{'FAQ search backend router of the agent interface.'} = 'Carian Soalan Lazim backend router muka ejen.';
     $Self->{Translation}->{'FAQ-Area'} = 'Kawasan FAQ';
-    $Self->{Translation}->{'Field4'} = '';
-    $Self->{Translation}->{'Field5'} = '';
+    $Self->{Translation}->{'Field4'} = 'Medan4';
+    $Self->{Translation}->{'Field5'} = 'Medan5';
     $Self->{Translation}->{'Frontend module registration for the public interface.'} = 'Frontend pendaftaran modul untuk antara muka awam.';
     $Self->{Translation}->{'Group for the approval of FAQ articles.'} = 'Kumpulan bagi kelulusan artikel FAQ.';
     $Self->{Translation}->{'History of this FAQ'} = 'Sejarah FAQ ini';
     $Self->{Translation}->{'Include internal fields on a FAQ based Ticket.'} = 'Termasuk bidang dalaman Tiket berasaskan FAQ.';
     $Self->{Translation}->{'Include the name of each field in a FAQ based Ticket.'} = 'Termasuk nama setiap bidang dalam Tiket berasaskan FAQ.';
-    $Self->{Translation}->{'Interfaces where the quick search should be shown.'} = '';
+    $Self->{Translation}->{'Interfaces where the quick search should be shown.'} = 'Antara muka di mana carian cepat hendaklah ditunjukkan.';
     $Self->{Translation}->{'Journal'} = 'Jurnal';
     $Self->{Translation}->{'Language Management'} = 'Pengurusan Bahasa';
     $Self->{Translation}->{'Link another object to this FAQ item'} = 'FAQ pautan ini kepada objek lain';
     $Self->{Translation}->{'List of state types which can be used in the agent interface.'} =
-        '';
+        'Senarai jenis keadaan yang boleh digunakan dalam ruang antara muka ejen.';
     $Self->{Translation}->{'List of state types which can be used in the customer interface.'} =
-        '';
+        'Senarai jenis keadaan yang boleh digunakan dalam ruang antara muka pelanggan.';
     $Self->{Translation}->{'List of state types which can be used in the public interface.'} =
-        '';
+        'Senarai jenis keadaan yang boleh digunakan dalam antara muka awam.';
     $Self->{Translation}->{'Maximum number of FAQ articles to be displayed in the FAQ Explorer result of the agent interface.'} =
         'Bilangan maksimum artikel FAQ akan dipaparkan dalam hasil FAQ Explorer muka ejen';
     $Self->{Translation}->{'Maximum number of FAQ articles to be displayed in the FAQ Explorer result of the customer interface.'} =
         'Bilangan maksimum artikel FAQ akan dipaparkan dalam hasil FAQ Explorer muka pelanggan';
     $Self->{Translation}->{'Maximum number of FAQ articles to be displayed in the FAQ Explorer result of the public interface.'} =
-        '';
+        'Bilangan maksimum artikel FAQ yang akan dipaparkan dalam hasil FAQ Explorer antara muka awam.';
     $Self->{Translation}->{'Maximum number of FAQ articles to be displayed in the FAQ journal in the agent interface.'} =
         'Bilangan maksimum FAQ artikel untuk dipaparkan dalam jurnal FAQ di muka ejen.';
     $Self->{Translation}->{'Maximum number of FAQ articles to be displayed in the result of a search in the agent interface.'} =
@@ -328,23 +334,23 @@ sub Data {
     $Self->{Translation}->{'Maximum number of FAQ articles to be displayed in the result of a search in the public interface.'} =
         'Bilangan maksimum artikel FAQ untuk dipaparkan dalam hasil carian dalam antara muka awam.';
     $Self->{Translation}->{'Maximum size of the titles in a FAQ article to be shown in the FAQ Explorer in the agent interface.'} =
-        '';
+        'Saiz maksimum tajuk dalam artikel FAQ untuk ditunjukkan dalam FAQ Explorer dalam antara muka ejen.';
     $Self->{Translation}->{'Maximum size of the titles in a FAQ article to be shown in the FAQ Explorer in the customer interface.'} =
-        '';
+        'Saiz maksimum tajuk dalam artikel FAQ untuk ditunjukkan dalam FAQ Explorer dalam antara muka pelanggan';
     $Self->{Translation}->{'Maximum size of the titles in a FAQ article to be shown in the FAQ Explorer in the public interface.'} =
-        '';
+        'Saiz maksimum tajuk dalam artikel FAQ untuk ditunjukkan dalam FAQ Explorer dalam antara muka awam.';
     $Self->{Translation}->{'Maximum size of the titles in a FAQ article to be shown in the FAQ Search in the agent interface.'} =
-        '';
+        'Saiz maksimum tajuk dalam artikel FAQ untuk ditunjukkan di FAQ Carian dalam antara muka ejen.';
     $Self->{Translation}->{'Maximum size of the titles in a FAQ article to be shown in the FAQ Search in the customer interface.'} =
-        '';
+        'Saiz maksimum tajuk dalam artikel FAQ untuk ditunjukkan di FAQ Carian dalam antara muka pelanggan.';
     $Self->{Translation}->{'Maximum size of the titles in a FAQ article to be shown in the FAQ Search in the public interface.'} =
-        '';
+        'Saiz maksimum tajuk dalam artikel FAQ untuk ditunjukkan di FAQ Carian dalam antara muka awam.';
     $Self->{Translation}->{'Maximum size of the titles in a FAQ article to be shown in the FAQ journal in the agent interface.'} =
-        '';
+        'Saiz maksimum tajuk dalam artikel FAQ untuk ditunjukkan dalam jurnal FAQ dalam antara muka ejen.';
     $Self->{Translation}->{'Module to generate HTML OpenSearch profile for short FAQ search in the public interface.'} =
-        '';
+        'Modul untuk menjana profil HTML OpenSearch untuk carian FAQ pendek dalam antara muka awam';
     $Self->{Translation}->{'Module to generate HTML OpenSearch profile for short faq search in the customer interface.'} =
-        '';
+        'Modul untuk menjana profil HTML OpenSearch untuk carian faq pendek dalam antara muka pelanggan.';
     $Self->{Translation}->{'Module to generate html OpenSearch profile for short faq search.'} =
         'Modul untuk menjana html profil opensearch untuk carian faq ringkas.';
     $Self->{Translation}->{'New FAQ Article'} = 'Perkara Baru FAQ';
@@ -369,19 +375,19 @@ sub Data {
     $Self->{Translation}->{'Rates for voting. Key must be in percent.'} = 'Kadar untuk mengundi. Kunci mestilah dalam peratus.';
     $Self->{Translation}->{'Search FAQ'} = 'Carian FAQ';
     $Self->{Translation}->{'Set the default height (in pixels) of inline HTML fields in AgentFAQZoom.'} =
-        '';
+        'Menetapkan ketinggian lalai (dalam piksel) bidang HTML sebaris dalam AgentFAQZoom.';
     $Self->{Translation}->{'Set the default height (in pixels) of inline HTML fields in CustomerFAQZoom (and PublicFAQZoom).'} =
-        '';
+        'Menetapkan ketinggian lalai (dalam piksel) bidang HTML sebaris dalam CustomerFAQZoom (dan PublicFAQZoom).';
     $Self->{Translation}->{'Set the maximum height (in pixels) of inline HTML fields in AgentFAQZoom.'} =
-        '';
+        'Menetapkan ketinggian maksimum (dalam piksel) bidang HTML sebaris dalam AgentFAQZoom.';
     $Self->{Translation}->{'Set the maximum height (in pixels) of inline HTML fields in CustomerFAQZoom (and PublicFAQZoom).'} =
-        '';
+        'Menetapkan ketinggian maksimum (dalam piksel) bidang HTML sebaris dalam CustomerFAQZoom (dan PublicFAQZoom).';
     $Self->{Translation}->{'Show "Insert FAQ Link" Button in AgentFAQZoomSmall for public FAQ Articles.'} =
         'Tunjukkan "Sisipan FAQ Link" Butang di AgentFAQZoomSmall untuk awam FAQ Artikel.';
     $Self->{Translation}->{'Show "Insert FAQ Text & Link" / "Insert Full FAQ & Link" Button in AgentFAQZoomSmall for public FAQ Articles.'} =
-        '';
+        'Tunjukkan butang "Sisipan FAQ Link & Teks"/ "Sisipan penuh FAQ" di AgentFAQZoomSmall untuk awam FAQ Artikel.';
     $Self->{Translation}->{'Show "Insert FAQ Text" / "Insert Full FAQ" Button in AgentFAQZoomSmall.'} =
-        '';
+        'Tunjukkan butang "Sisipan Teks FAQ" / "Sisipan Penuh FAQ" di AgentFAQZoomSmall.';
     $Self->{Translation}->{'Show FAQ Article with HTML.'} = 'Papar FAQ Perkara dengan HTML.';
     $Self->{Translation}->{'Show FAQ path yes/no.'} = 'Papar FAQ jalan ya / tidak.';
     $Self->{Translation}->{'Show items of subcategories.'} = 'Papar item subkategori.';
@@ -404,15 +410,16 @@ sub Data {
     $Self->{Translation}->{'The identifier for a FAQ, e.g. FAQ#, KB#, MyFAQ#. The default is FAQ#.'} =
         'Pengecam untuk item FAQ, seperti FAQ #, # KB, MyFAQ #. Nilai lalai adalah # FAQ.';
     $Self->{Translation}->{'This setting defines that a \'FAQ\' object can be linked with other \'FAQ\' objects using the \'Normal\' link type.'} =
-        '';
+        'Tetapan ini mentakrifkan bahawa objek \'FAQ\' boleh dipaut dengan objek \'FAQ\' lain menggunakan jenis pautan \'Normal\'.';
     $Self->{Translation}->{'This setting defines that a \'FAQ\' object can be linked with other \'FAQ\' objects using the \'ParentChild\' link type.'} =
-        '';
+        'Mentakrifkan bahawa objek \'FAQ\' boleh dipaut dengan objek \'FAQ\' lain menggunakan jenis pautan \'ParentChild\'.';
     $Self->{Translation}->{'This setting defines that a \'FAQ\' object can be linked with other \'Ticket\' objects using the \'Normal\' link type.'} =
         'Mentakrifkan bahawa \' FAQ\' objek dengan jenis pautan \'biasa\' lain \'Tiket\' boleh dikaitkan dengan objek.';
     $Self->{Translation}->{'This setting defines that a \'FAQ\' object can be linked with other \'Ticket\' objects using the \'ParentChild\' link type.'} =
-        '';
+        'Tetapan ini mentakrifkan bahawa objek \'FAQ\' boleh dipaut dengan \'Tiket\' lain menggunakan jenis pautan \'ParentChild\'.';
     $Self->{Translation}->{'Ticket body for approval of FAQ article.'} = 'Badan tiket untuk melepaskan artikel FAQ.';
     $Self->{Translation}->{'Ticket subject for approval of FAQ article.'} = 'Tertakluk kepada tiket untuk melepaskan artikel FAQ.';
+    $Self->{Translation}->{'Toolbar Item for a shortcut.'} = 'Item Toolbar untuk jalan pintas.';
 
 }
 

@@ -1,6 +1,5 @@
 # --
-# Kernel/Modules/AgentFAQDelete.pm - the  delete module
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -12,7 +11,7 @@ package Kernel::Modules::AgentFAQDelete;
 use strict;
 use warnings;
 
-use Kernel::System::FAQ;
+our $ObjectManagerDisabled = 1;
 
 sub new {
     my ( $Type, %Param ) = @_;
@@ -21,28 +20,18 @@ sub new {
     my $Self = {%Param};
     bless( $Self, $Type );
 
-    # check needed objects
-    for my $Object (
-        qw(ParamObject DBObject LayoutObject LogObject ConfigObject UserObject GroupObject)
-        )
-    {
-        if ( !$Self->{$Object} ) {
-            $Self->{LayoutObject}->FatalError( Message => "Got no $Object!" );
-        }
-    }
-
-    # create additional objects
-    $Self->{FAQObject} = Kernel::System::FAQ->new(%Param);
-
     return $Self;
 }
 
 sub Run {
     my ( $Self, %Param ) = @_;
 
+    # get layout object
+    my $LayoutObject = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
+
     # permission check
     if ( !$Self->{AccessRo} ) {
-        return $Self->{LayoutObject}->NoPermission(
+        return $LayoutObject->NoPermission(
             Message    => 'You need ro permission!',
             WithHeader => 'yes',
         );
@@ -52,37 +41,40 @@ sub Run {
     my %GetParam;
 
     # get needed Item id
-    $GetParam{ItemID} = $Self->{ParamObject}->GetParam( Param => 'ItemID' );
+    $GetParam{ItemID} = $Kernel::OM->Get('Kernel::System::Web::Request')->GetParam( Param => 'ItemID' );
 
     # check needed stuff
     if ( !$GetParam{ItemID} ) {
 
         # error page
-        return $Self->{LayoutObject}->ErrorScreen(
+        return $LayoutObject->ErrorScreen(
             Message => "No ItemID is given!",
             Comment => 'Please contact the administrator.',
         );
     }
 
+    # get FAQ object
+    my $FAQObject = $Kernel::OM->Get('Kernel::System::FAQ');
+
     # get FAQ item data
-    my %FAQData = $Self->{FAQObject}->FAQGet(
+    my %FAQData = $FAQObject->FAQGet(
         ItemID     => $GetParam{ItemID},
         ItemFields => 0,
         UserID     => $Self->{UserID},
     );
     if ( !%FAQData ) {
-        return $Self->{LayoutObject}->ErrorScreen();
+        return $LayoutObject->ErrorScreen();
     }
 
     # check user permission
-    my $Permission = $Self->{FAQObject}->CheckCategoryUserPermission(
+    my $Permission = $FAQObject->CheckCategoryUserPermission(
         UserID     => $Self->{UserID},
         CategoryID => $FAQData{CategoryID},
     );
 
     # show error message
     if ( !$Permission ) {
-        return $Self->{LayoutObject}->NoPermission(
+        return $LayoutObject->NoPermission(
             Message    => 'You have no permission for this category!',
             WithHeader => 'yes',
         );
@@ -91,7 +83,7 @@ sub Run {
     if ( $Self->{Subaction} eq 'Delete' ) {
 
         # delete the FAQ article
-        my $CouldDeleteItem = $Self->{FAQObject}->FAQDelete(
+        my $CouldDeleteItem = $FAQObject->FAQDelete(
             ItemID => $FAQData{ItemID},
             UserID => $Self->{UserID},
         );
@@ -99,14 +91,14 @@ sub Run {
         if ($CouldDeleteItem) {
 
             # redirect to explorer, when the deletion was successful
-            return $Self->{LayoutObject}->Redirect(
+            return $LayoutObject->Redirect(
                 OP => "Action=AgentFAQExplorer;CategoryID=$FAQData{CategoryID}",
             );
         }
         else {
 
             # show error message, when delete failed
-            return $Self->{LayoutObject}->ErrorScreen(
+            return $LayoutObject->ErrorScreen(
                 Message => "Was not able to delete the FAQ article $FAQData{ItemID}!",
                 Comment => 'Please contact the administrator.',
             );
@@ -117,7 +109,7 @@ sub Run {
     my $DialogType = 'Confirmation';
 
     # output content
-    my $Output .= $Self->{LayoutObject}->Output(
+    my $Output = $LayoutObject->Output(
         TemplateFile => 'AgentFAQDelete',
         Data         => {
             %Param,
@@ -132,10 +124,10 @@ sub Run {
     );
 
     # return JSON-String because of AJAX-Mode
-    my $OutputJSON = $Self->{LayoutObject}->JSONEncode( Data => \%Data );
+    my $OutputJSON = $LayoutObject->JSONEncode( Data => \%Data );
 
-    return $Self->{LayoutObject}->Attachment(
-        ContentType => 'application/json; charset=' . $Self->{LayoutObject}->{Charset},
+    return $LayoutObject->Attachment(
+        ContentType => 'application/json; charset=' . $LayoutObject->{Charset},
         Content     => $OutputJSON,
         Type        => 'inline',
         NoCache     => 1,

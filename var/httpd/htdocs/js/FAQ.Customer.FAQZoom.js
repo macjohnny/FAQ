@@ -1,6 +1,5 @@
 // --
-// FAQ.Customer.FAQZoom.js - provides the special module functions for FAQZoom
-// Copyright (C) 2001-2012 OTRS AG, http://otrs.org/
+// Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 // --
 // This software comes with ABSOLUTELY NO WARRANTY. For details, see
 // the enclosed file COPYING for license information (AGPL). If you
@@ -21,36 +20,38 @@ FAQ.Customer = FAQ.Customer || {};
 FAQ.Customer.FAQZoom = (function (TargetNS) {
 
     /**
+     * @name IframeAutoHeight
+     * @memberof FAQ.Customer.FAQZoom
      * @function
-     * @param {jQueryObject} $Iframe The iframe which should be auto-heighted
-     * @return nothing
-     *      This function initializes the special module functions
+     * @param {jQueryObject} $Iframe - The iframe which should be auto-heighted
+     * @description
+     *      Set iframe height automatically based on real content height and default config setting.
      */
-    TargetNS.IframeAutoHeight = function ($Iframe) {
+     TargetNS.IframeAutoHeight = function ($Iframe) {
+        var NewHeight;
+
         if (isJQueryObject($Iframe)) {
+            // slightly change the width of the iframe to not be exactly 100% width anymore
+            // this prevents a double horizontal scrollbar (from iframe and surrounding div)
+            $Iframe.width($Iframe.width() - 2);
 
-            var NewHeight = $Iframe
-                .contents()
-                .find('html')
-                .height();
-
-            // IE8 needs some more space due to incorrect height calculation
-            if (NewHeight > 0 && $.browser.msie && $.browser.version === '8.0') {
-                NewHeight = NewHeight + 4;
-            }
+            NewHeight = $Iframe.contents().find('body').height();
 
             // if the iFrames height is 0, we collapse the widget
             if (NewHeight === 0) {
-                $Iframe.closest('li.Customer').removeClass('Visible');
-            }
-
-            if (!NewHeight || isNaN(NewHeight)) {
-                NewHeight = Core.Config.Get('FAQ::Frontend::CustomerHTMLFieldHeightDefault');
+                $Iframe.closest('.WidgetSimple').removeClass('Expanded').addClass('Collapsed');
+            } else if (!NewHeight || isNaN(NewHeight)) {
+                NewHeight = Core.Config.Get('FAQ::Frontend::AgentHTMLFieldHeightDefault');
             }
             else {
-                if (NewHeight > Core.Config.Get('FAQ::Frontend::CustomerHTMLFieldHeightMax')) {
-                    NewHeight = Core.Config.Get('FAQ::Frontend::CustomerHTMLFieldHeightMax');
+                if (NewHeight > Core.Config.Get('FAQ::Frontend::AgentHTMLFieldHeightMax')) {
+                    NewHeight = Core.Config.Get('FAQ::Frontend::AgentHTMLFieldHeightMax');
                 }
+            }
+
+            // add delta for scrollbar
+            if (NewHeight > 0) {
+                NewHeight = parseInt(NewHeight, 10) + 25;
             }
             $Iframe.height(NewHeight + 'px');
         }
@@ -58,6 +59,8 @@ FAQ.Customer.FAQZoom = (function (TargetNS) {
 
     /**
      * @function
+     * @memberof FAQ.Customer.FAQZoom
+     * @param {jQueryObject} $Message - an FAQ field.
      * @description
      *      This function checks the class of a FAQ field:
      *      user calls this function by clicking on the field head, field gets hidden by removing
@@ -75,13 +78,13 @@ FAQ.Customer.FAQZoom = (function (TargetNS) {
 
     /**
      * @function
+     * @memberof FAQ.Customer.FAQZoom
      * @description
      *      This function binds functions to the 'MessageHeader'
      *      to toggle the visibility of the MessageBody and the reply form.
      */
     TargetNS.Init = function(){
         var $Messages = $('#Messages > li'),
-            $VisibleMessage = $Messages.last(),
             $MessageHeaders = $('.MessageHeader', $Messages);
 
         $MessageHeaders.click(function(Event){
@@ -94,8 +97,7 @@ FAQ.Customer.FAQZoom = (function (TargetNS) {
             $('.FAQMessageBrowser a.Close').on('click', function () {
                 var Data = {
                     Action: 'CustomerFAQZoom',
-                    Subaction: 'BrowserLinkMessage',
-                    ItemID: $('input[name=ItemID]').val()
+                    Subaction: 'BrowserLinkMessage'
                 };
 
                 $('.FAQMessageBrowser').fadeOut("slow");

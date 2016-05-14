@@ -1,6 +1,5 @@
 # --
-# Kernel/Language/pl_FAQ.pm - translation file
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -17,13 +16,13 @@ sub Data {
     my $Self = shift;
 
     # Template: AAAFAQ
-    $Self->{Translation}->{'internal'} = 'wewnętrzne';
-    $Self->{Translation}->{'public'} = 'publiczne';
+    $Self->{Translation}->{'internal'} = 'wewnętrzny';
+    $Self->{Translation}->{'public'} = 'publiczny';
     $Self->{Translation}->{'external'} = 'zewnętrzne';
     $Self->{Translation}->{'FAQ Number'} = 'Numer FAQ';
-    $Self->{Translation}->{'Latest updated FAQ articles'} = 'ostatnio zmienione artykuły FAQ';
-    $Self->{Translation}->{'Latest created FAQ articles'} = 'ostatnio utworzone artykuły FAQ';
-    $Self->{Translation}->{'Top 10 FAQ articles'} = '10 najlepszych artykułów FAQ';
+    $Self->{Translation}->{'Latest updated FAQ articles'} = 'Ostatnio zaktualizowane informacje FAQ';
+    $Self->{Translation}->{'Latest created FAQ articles'} = 'Ostatnio dodane informacje FAQ';
+    $Self->{Translation}->{'Top 10 FAQ articles'} = 'Top 10 informacji FAQ';
     $Self->{Translation}->{'Subcategory of'} = 'Podkategoria';
     $Self->{Translation}->{'No rate selected!'} = 'Nie wybrałeś oceny!';
     $Self->{Translation}->{'Explorer'} = 'Eksplorer';
@@ -38,7 +37,7 @@ sub Data {
     $Self->{Translation}->{'End year'} = 'Rok końcowy';
     $Self->{Translation}->{'Thanks for your vote!'} = 'Dziękujemy za oddanie głosu!';
     $Self->{Translation}->{'You have already voted!'} = 'Już raz głosowałeś!';
-    $Self->{Translation}->{'FAQ Article Print'} = 'Drukuj artykuł FAQ';
+    $Self->{Translation}->{'FAQ Article Print'} = 'Drukuj informację FAQ';
     $Self->{Translation}->{'FAQ Articles (Top 10)'} = 'Artykuły FAQ (10 najlepszych)';
     $Self->{Translation}->{'FAQ Articles (new created)'} = 'Artykuły FAQ (nowe)';
     $Self->{Translation}->{'FAQ Articles (recently changed)'} = 'Artykuły FAQ (ostatnio zmienione)';
@@ -50,12 +49,12 @@ sub Data {
     $Self->{Translation}->{'FAQ language updated!'} = 'Język FAQ zaktualizowany!';
     $Self->{Translation}->{'The name is required!'} = 'Nazwa jest wymagana!';
     $Self->{Translation}->{'This language already exists!'} = 'Ten język już istnieje!';
-    $Self->{Translation}->{'Symptom'} = '';
-    $Self->{Translation}->{'Solution'} = '';
+    $Self->{Translation}->{'Symptom'} = 'Objaw';
+    $Self->{Translation}->{'Solution'} = 'Rozwiązanie';
 
     # Template: AgentFAQAdd
     $Self->{Translation}->{'Add FAQ Article'} = 'Dodaj artykuł FAQ';
-    $Self->{Translation}->{'Keywords'} = '';
+    $Self->{Translation}->{'Keywords'} = 'słowa kluczowe';
     $Self->{Translation}->{'A category is required.'} = 'Kategoria jest wymagana.';
     $Self->{Translation}->{'Approval'} = 'Zatwierdzenie';
 
@@ -84,11 +83,14 @@ sub Data {
     # Template: AgentFAQExplorer
     $Self->{Translation}->{'FAQ Explorer'} = 'Eksplorer FAQ';
     $Self->{Translation}->{'Quick Search'} = 'Szybkie wyszukiwanie';
-    $Self->{Translation}->{'Wildcards are allowed.'} = '';
+    $Self->{Translation}->{'Wildcards are allowed.'} = 'Znaki wieloznaczne są dozwolone.';
     $Self->{Translation}->{'Advanced Search'} = 'Wyszukiwanie zaawansowane';
     $Self->{Translation}->{'Subcategories'} = 'Podkategorie';
     $Self->{Translation}->{'FAQ Articles'} = 'Artykuły FAQ';
     $Self->{Translation}->{'No subcategories found.'} = 'Brak podkategorii.';
+
+    # Template: AgentFAQHistory
+    $Self->{Translation}->{'History of'} = 'Historia';
 
     # Template: AgentFAQJournalOverviewSmall
     $Self->{Translation}->{'No FAQ Journal data found.'} = 'Brak danych w dzienniku FAQ.';
@@ -113,28 +115,23 @@ sub Data {
     # Template: AgentFAQOverviewSmall
     $Self->{Translation}->{'No FAQ data found.'} = 'Brak danych FAQ.';
 
-    # Template: AgentFAQPrint
-    $Self->{Translation}->{'FAQ-Info'} = 'Info-FAQ';
-    $Self->{Translation}->{'Votes'} = 'Głosy';
-    $Self->{Translation}->{'Last update'} = '';
-
     # Template: AgentFAQSearch
-    $Self->{Translation}->{'Keyword'} = '';
+    $Self->{Translation}->{'Keyword'} = 'Słowo kluczowe';
     $Self->{Translation}->{'Vote (e. g. Equals 10 or GreaterThan 60)'} = '';
     $Self->{Translation}->{'Rate (e. g. Equals 25% or GreaterThan 75%)'} = '';
-    $Self->{Translation}->{'Approved'} = '';
+    $Self->{Translation}->{'Approved'} = 'Zatwierdzone';
     $Self->{Translation}->{'Last changed by'} = 'Ostatnio zmienione przez';
-    $Self->{Translation}->{'FAQ Article Create Time (before/after)'} = '';
-    $Self->{Translation}->{'FAQ Article Create Time (between)'} = '';
-    $Self->{Translation}->{'FAQ Article Change Time (before/after)'} = '';
-    $Self->{Translation}->{'FAQ Article Change Time (between)'} = '';
+    $Self->{Translation}->{'FAQ Article Create Time (before/after)'} = 'FAQ Czas tworzenia zgłoszenia (przed/po)';
+    $Self->{Translation}->{'FAQ Article Create Time (between)'} = 'FAQ Czas tworzenia zgłoszenia (pomiędzy)';
+    $Self->{Translation}->{'FAQ Article Change Time (before/after)'} = 'FAQ Czas zmiany zgłoszenia (przed/po)';
+    $Self->{Translation}->{'FAQ Article Change Time (between)'} = 'FAQ Czas zmiany zgłoszenia (pomiędzy)';
 
     # Template: AgentFAQSearchOpenSearchDescriptionFulltext
     $Self->{Translation}->{'FAQFulltext'} = 'FAQ pełnotekstowo';
 
     # Template: AgentFAQSearchSmall
     $Self->{Translation}->{'FAQ Search'} = 'Wyszukiwanie FAQ';
-    $Self->{Translation}->{'Profile Selection'} = '';
+    $Self->{Translation}->{'Profile Selection'} = 'Wybór profilu';
     $Self->{Translation}->{'Vote'} = '';
     $Self->{Translation}->{'No vote settings'} = '';
     $Self->{Translation}->{'Specific votes'} = '';
@@ -144,14 +141,13 @@ sub Data {
     $Self->{Translation}->{'Specific rate'} = '';
     $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = '';
     $Self->{Translation}->{'FAQ Article Create Time'} = '';
-    $Self->{Translation}->{'Specific date'} = '';
-    $Self->{Translation}->{'Date range'} = '';
-    $Self->{Translation}->{'FAQ Article Change Time'} = '';
+    $Self->{Translation}->{'FAQ Article Change Time'} = 'FAQ Czas zmiany zgłoszenia';
 
     # Template: AgentFAQZoom
     $Self->{Translation}->{'FAQ Information'} = 'Informacje FAQ';
     $Self->{Translation}->{'Rating'} = 'Ocena';
     $Self->{Translation}->{'out of 5'} = 'z 5';
+    $Self->{Translation}->{'Votes'} = 'Głosy';
     $Self->{Translation}->{'No votes found!'} = 'Brak głosów!';
     $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = 'Brak głosów! Bądź pierwszy i oceń ten artykuł FAQ.';
     $Self->{Translation}->{'Download Attachment'} = 'Pobierz załącznik';
@@ -192,6 +188,19 @@ sub Data {
 
     # Template: PublicFAQSearchResultShort
     $Self->{Translation}->{'Back to FAQ Explorer'} = '';
+
+    # Perl Module: Kernel/Modules/AgentFAQJournal.pm
+    $Self->{Translation}->{'FAQ Journal'} = 'Dziennik FAQ';
+
+    # Perl Module: Kernel/Modules/AgentFAQPrint.pm
+    $Self->{Translation}->{'Last update'} = 'Ostatnia aktualizacja';
+    $Self->{Translation}->{'FAQ Dynamic Fields'} = '';
+
+    # Perl Module: Kernel/Modules/AgentFAQSearch.pm
+    $Self->{Translation}->{'No Result!'} = '';
+
+    # Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+    $Self->{Translation}->{'This article is empty!'} = '';
 
     # SysConfig
     $Self->{Translation}->{'A filter for HTML output to add links behind a defined string. The element Image allows two input kinds. First the name of an image (e.g. faq.png). In this case the OTRS image path will be used. The second possibility is to insert the link to the image.'} =
@@ -253,8 +262,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Defines the shown columns in the FAQ search. This option has no effect on the position of the column.'} =
         '';
-    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible.'} =
-        '';
+    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed.'} = '';
     $Self->{Translation}->{'Definition of FAQ item free text field.'} = 'Definicja pola free text pozycji FAQ.';
     $Self->{Translation}->{'Delete this FAQ'} = 'Usuń to FAQ';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ add screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
@@ -288,12 +296,10 @@ sub Data {
     $Self->{Translation}->{'Edit this FAQ'} = 'Edytuj to FAQ';
     $Self->{Translation}->{'Enable multiple languages on FAQ module.'} = 'Włącz wiele języków w module FAQ.';
     $Self->{Translation}->{'Enable voting mechanism on FAQ module.'} = 'Włącz mechanizm głosowania w module FAQ.';
-    $Self->{Translation}->{'FAQ Journal'} = 'Dziennik FAQ';
     $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = 'Limit FAQ w przeglądzie dziennika w trybie "Małe"';
     $Self->{Translation}->{'FAQ Overview "Small" Limit'} = 'Limit FAQ w przeglądzie w trybie "Małe"';
     $Self->{Translation}->{'FAQ limit per page for FAQ Journal Overview "Small"'} = 'Limit FAQ na stronę w przeglądzie dziennika w trybie "Małe"';
     $Self->{Translation}->{'FAQ limit per page for FAQ Overview "Small"'} = 'Limit FAQ na stronę w przeglądzie w trybie "Małe"';
-    $Self->{Translation}->{'FAQ path separator.'} = 'Separator ścieżki FAQ';
     $Self->{Translation}->{'FAQ search backend router of the agent interface.'} = '';
     $Self->{Translation}->{'FAQ-Area'} = 'FAQ: często zadawane pytania';
     $Self->{Translation}->{'Field4'} = '';
@@ -413,6 +419,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Ticket body for approval of FAQ article.'} = '';
     $Self->{Translation}->{'Ticket subject for approval of FAQ article.'} = '';
+    $Self->{Translation}->{'Toolbar Item for a shortcut.'} = 'Pozycja paska narzędziowego dla skrótu.';
 
 }
 

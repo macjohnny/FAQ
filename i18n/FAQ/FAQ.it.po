@@ -1,15 +1,19 @@
 # 
 # Translators:
+# Emil Pandocchi <emil.pandocchi@gmail.com>, 2016
 # Giulio <giulio.compagnone@gmail.com>, 2014
 # Luca Maranzano <liuk@linux.it>, 2014
+# Marthe Ngo Temb <ngotemb@gmail.com>, 2015
 # Nicola Biada <nicola.biada@wuerth-phoenix.com>, 2014
+# Paolo <paolo.larcheri@gmail.com>, 2015
+# Vincenzo Reale <vinx.reale@gmail.com>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2014-08-08 19:10+0200\n"
-"PO-Revision-Date: 2015-05-06 22:59+0000\n"
+"POT-Creation-Date: 2016-05-10 11:49+0000\n"
+"PO-Revision-Date: 2016-05-10 16:53+0000\n"
 "Last-Translator: Carlos Rodríguez <carlos.rodriguez@otrs.com>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/OTRS/language/it/)\n"
+"Language-Team: Italian (http://www.transifex.com/otrs/OTRS/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -150,11 +154,11 @@ msgstr "Linguaggio esistente!"
 
 #. Template: AAAFAQ
 msgid "Symptom"
-msgstr ""
+msgstr "Sintomo"
 
 #. Template: AAAFAQ
 msgid "Solution"
-msgstr ""
+msgstr "Soluzione"
 
 #. Template: AgentFAQAdd
 msgid "Add FAQ Article"
@@ -262,6 +266,10 @@ msgstr "Articoli FAQ"
 msgid "No subcategories found."
 msgstr "Nessuna sottocategoria trovata."
 
+#. Template: AgentFAQHistory
+msgid "History of"
+msgstr "Storico di"
+
 #. Template: AgentFAQJournalOverviewSmall
 msgid "No FAQ Journal data found."
 msgstr "Nessun dato trovato nel Riepilogo FAQ."
@@ -314,18 +322,6 @@ msgstr "Articoli FAQ per pagina"
 #. Template: AgentFAQOverviewSmall
 msgid "No FAQ data found."
 msgstr "Nessun dato della FAQ trovato."
-
-#. Template: AgentFAQPrint
-msgid "FAQ-Info"
-msgstr "FAQ-Info"
-
-#. Template: AgentFAQPrint
-msgid "Votes"
-msgstr "Voti"
-
-#. Template: AgentFAQPrint
-msgid "Last update"
-msgstr "Ultimo aggiornamento"
 
 #. Template: AgentFAQSearch
 msgid "Keyword"
@@ -412,14 +408,6 @@ msgid "FAQ Article Create Time"
 msgstr "Istante di Creazione dell'Articolo FAQ"
 
 #. Template: AgentFAQSearchSmall
-msgid "Specific date"
-msgstr "Data specifica"
-
-#. Template: AgentFAQSearchSmall
-msgid "Date range"
-msgstr "Periodo"
-
-#. Template: AgentFAQSearchSmall
 msgid "FAQ Article Change Time"
 msgstr "Istante di modifica dell'Articolo FAQ"
 
@@ -434,6 +422,10 @@ msgstr "Valutazione"
 #. Template: AgentFAQZoom
 msgid "out of 5"
 msgstr "su 5"
+
+#. Template: AgentFAQZoom
+msgid "Votes"
+msgstr "Voti"
 
 #. Template: AgentFAQZoom
 msgid "No votes found!"
@@ -452,7 +444,7 @@ msgid ""
 "To open links in the following description blocks, you might need to press "
 "Ctrl or Cmd or Shift key while clicking the link (depending on your browser "
 "and OS)."
-msgstr ""
+msgstr "Per aprire i collegamenti nei seguenti blocchi descrizione, potrebbe essere necessario premere Ctrl o Cmd o Shift mentre si clicca sul collegamento (a seconda del browser e del Sistema Operativo)."
 
 #. Template: AgentFAQZoom
 msgid ""
@@ -542,7 +534,27 @@ msgstr "Pubblico"
 
 #. Template: PublicFAQSearchResultShort
 msgid "Back to FAQ Explorer"
-msgstr ""
+msgstr "Torna al navigatore delle FAQ"
+
+#. Perl Module: Kernel/Modules/AgentFAQJournal.pm
+msgid "FAQ Journal"
+msgstr "Registro delle FAQ"
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "Last update"
+msgstr "Ultimo aggiornamento"
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "FAQ Dynamic Fields"
+msgstr "Campi dinamici FAQ"
+
+#. Perl Module: Kernel/Modules/AgentFAQSearch.pm
+msgid "No Result!"
+msgstr "Nessun risultato!"
+
+#. Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+msgid "This article is empty!"
+msgstr "Questo articolo è vuoto!"
 
 #. SysConfig
 msgid ""
@@ -578,7 +590,7 @@ msgstr "Lingua predefinita per gli articoli  FAQ per la modalità singola lingua
 
 #. SysConfig
 msgid "Default maximum size of the titles in a FAQ article to be shown."
-msgstr ""
+msgstr "Default numero di catteri del titolo di una FAQ da visualizzare"
 
 #. SysConfig
 msgid "Default priority of tickets for the approval of FAQ articles."
@@ -608,7 +620,7 @@ msgstr "Definisce se il titolo FAQ dovrebbe essere concatenato con l'oggetto del
 
 #. SysConfig
 msgid "Defines an overview module to show the small view of a FAQ journal."
-msgstr ""
+msgstr "Definisce un modulo panoramica per mostrare una vista abbreviata di una lista di FAQ."
 
 #. SysConfig
 msgid "Defines an overview module to show the small view of a FAQ list."
@@ -660,31 +672,31 @@ msgstr ""
 msgid ""
 "Defines the default FAQ order in the FAQ Explorer result of the customer "
 "interface. Up: oldest on top. Down: latest on top."
-msgstr "Definisce l'ordine FAQ predefinito nel risultato FAQ Explorer dell'interfaccia cliente. Up: più antico sulla parte superiore. Giù: più recente in cima."
+msgstr "Definisce l'ordine FAQ predefinito nel risultato FAQ Explorer dell'interfaccia cliente. Su: meno recente sulla parte superiore. Giù: più recente in cima."
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order in the FAQ Explorer result of the public "
 "interface. Up: oldest on top. Down: latest on top."
-msgstr ""
+msgstr "Definisce l'ordine FAQ predefinito nel risultato FAQ Explorer dell'interfaccia pubblica. Su: meno recente in cima. Giù: più recente in cima."
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order of a search result in the agent interface. Up:"
 " oldest on top. Down: latest on top."
-msgstr ""
+msgstr "Definisce l'ordine FAQ predefinito nel risultato della ricerca nell'interfaccia agente. Su: meno recente in cima. Giù: più recente in cima."
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order of a search result in the customer interface. "
 "Up: oldest on top. Down: latest on top."
-msgstr ""
+msgstr "Definisce l'ordine FAQ predefinito nel risultato della ricerca nell'interfaccia cliente. Su: meno recente in cima. Giù: più recente in cima."
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order of a search result in the public interface. "
 "Up: oldest on top. Down: latest on top."
-msgstr ""
+msgstr "Definisce l'ordine FAQ predefinito nel risultato della ricerca nell'interfaccia pubblica. Su: meno recente in cima. Giù: più recente in cima."
 
 #. SysConfig
 msgid "Defines the default shown FAQ search attribute for FAQ search screen."
@@ -721,23 +733,19 @@ msgstr ""
 msgid ""
 "Defines the shown columns in the FAQ search. This option has no effect on "
 "the position of the column."
-msgstr ""
+msgstr "Definisce le colonne visibili nella ricerca FAQ. Questa opzione non ha effetto nella posizione della colonna."
 
 #. SysConfig
-msgid ""
-"Defines where the 'Insert FAQ' link will be displayed. Note: "
-"AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, "
-"AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, "
-"AgentTicketPriority and AgentTicketResponsible."
-msgstr ""
+msgid "Defines where the 'Insert FAQ' link will be displayed."
+msgstr "Definisce dove verrà visualizzato il collegamento 'Inserisci FAQ'."
 
 #. SysConfig
 msgid "Definition of FAQ item free text field."
-msgstr ""
+msgstr "Definizione del campo testo libero delle FAQ"
 
 #. SysConfig
 msgid "Delete this FAQ"
-msgstr ""
+msgstr "Elimina questa FAQ"
 
 #. SysConfig
 msgid ""
@@ -828,19 +836,15 @@ msgstr ""
 
 #. SysConfig
 msgid "Edit this FAQ"
-msgstr ""
+msgstr "Modifica questa FAQ"
 
 #. SysConfig
 msgid "Enable multiple languages on FAQ module."
-msgstr ""
+msgstr "Abilita più lingue nel modulo FAQ."
 
 #. SysConfig
 msgid "Enable voting mechanism on FAQ module."
-msgstr ""
-
-#. SysConfig
-msgid "FAQ Journal"
-msgstr ""
+msgstr "Abilita meccanismo di voto nel modulo FAQ."
 
 #. SysConfig
 msgid "FAQ Journal Overview \"Small\" Limit"
@@ -859,24 +863,20 @@ msgid "FAQ limit per page for FAQ Overview \"Small\""
 msgstr ""
 
 #. SysConfig
-msgid "FAQ path separator."
-msgstr ""
-
-#. SysConfig
 msgid "FAQ search backend router of the agent interface."
 msgstr ""
 
 #. SysConfig
 msgid "FAQ-Area"
-msgstr ""
+msgstr "Area FAQ"
 
 #. SysConfig
 msgid "Field4"
-msgstr ""
+msgstr "Campo4"
 
 #. SysConfig
 msgid "Field5"
-msgstr ""
+msgstr "Campo5"
 
 #. SysConfig
 msgid "Frontend module registration for the public interface."
@@ -884,11 +884,11 @@ msgstr ""
 
 #. SysConfig
 msgid "Group for the approval of FAQ articles."
-msgstr ""
+msgstr "Gruppo per l'approvazione di articoli FAQ."
 
 #. SysConfig
 msgid "History of this FAQ"
-msgstr ""
+msgstr "Storico di questa FAQ"
 
 #. SysConfig
 msgid "Include internal fields on a FAQ based Ticket."
@@ -900,19 +900,19 @@ msgstr ""
 
 #. SysConfig
 msgid "Interfaces where the quick search should be shown."
-msgstr ""
+msgstr "Interfacce dove la ricerca rapida dovrebbe essere vista."
 
 #. SysConfig
 msgid "Journal"
-msgstr ""
+msgstr "Registro"
 
 #. SysConfig
 msgid "Language Management"
-msgstr ""
+msgstr "Gestione della lingua"
 
 #. SysConfig
 msgid "Link another object to this FAQ item"
-msgstr ""
+msgstr "Collega un'altro oggetto a questo oggetto FAQ"
 
 #. SysConfig
 msgid "List of state types which can be used in the agent interface."
@@ -1028,11 +1028,11 @@ msgstr ""
 
 #. SysConfig
 msgid "New FAQ Article"
-msgstr ""
+msgstr "Nuovo articolo FAQ"
 
 #. SysConfig
 msgid "New FAQ articles need approval before they get published."
-msgstr ""
+msgstr "I nuovi articoli FAQ richiedono approvazione prima di essere pubblicati."
 
 #. SysConfig
 msgid ""
@@ -1060,15 +1060,15 @@ msgstr ""
 
 #. SysConfig
 msgid "Number of shown items in last changes."
-msgstr ""
+msgstr "Numero di elementi mostrati nei modificati di recente."
 
 #. SysConfig
 msgid "Number of shown items in last created."
-msgstr ""
+msgstr "Numero di elementi mostrati nei creati di recente."
 
 #. SysConfig
 msgid "Number of shown items in the top 10 feature."
-msgstr ""
+msgstr "Numero di elementi mostrati nella funzionalità principali 10."
 
 #. SysConfig
 msgid ""
@@ -1084,11 +1084,11 @@ msgstr ""
 
 #. SysConfig
 msgid "Print this FAQ"
-msgstr ""
+msgstr "Stampa questa FAQ"
 
 #. SysConfig
 msgid "Queue for the approval of FAQ articles."
-msgstr ""
+msgstr "Coda per l'approvazione degli articoli delle FAQ."
 
 #. SysConfig
 msgid "Rates for voting. Key must be in percent."
@@ -1096,7 +1096,7 @@ msgstr ""
 
 #. SysConfig
 msgid "Search FAQ"
-msgstr ""
+msgstr "Cerca FAQ"
 
 #. SysConfig
 msgid ""
@@ -1138,15 +1138,15 @@ msgstr ""
 
 #. SysConfig
 msgid "Show FAQ Article with HTML."
-msgstr ""
+msgstr "Mostra articolo FAQ con HTML."
 
 #. SysConfig
 msgid "Show FAQ path yes/no."
-msgstr ""
+msgstr "Mostra percorso FAQ sì/no."
 
 #. SysConfig
 msgid "Show items of subcategories."
-msgstr ""
+msgstr "Mostra gli elementi delle sottocategorie."
 
 #. SysConfig
 msgid "Show last change items in defined interfaces."
@@ -1158,11 +1158,11 @@ msgstr ""
 
 #. SysConfig
 msgid "Show top 10 items in defined interfaces."
-msgstr ""
+msgstr "Mostra i principali 10 nelle interfacce specificate."
 
 #. SysConfig
 msgid "Show voting in defined interfaces."
-msgstr ""
+msgstr "Mostra la votazione nelle interfacce specificate."
 
 #. SysConfig
 msgid ""
@@ -1202,7 +1202,7 @@ msgstr ""
 
 #. SysConfig
 msgid "The identifier for a FAQ, e.g. FAQ#, KB#, MyFAQ#. The default is FAQ#."
-msgstr ""
+msgstr "Identificatore per le FAQ, es: FAQ#, KB#, MyFAQ#. Il valore predefinito è FAQ#."
 
 #. SysConfig
 msgid ""
@@ -1230,8 +1230,12 @@ msgstr ""
 
 #. SysConfig
 msgid "Ticket body for approval of FAQ article."
-msgstr ""
+msgstr "Corpo del ticket per l'approvazione dell'articolo delle FAQ."
 
 #. SysConfig
 msgid "Ticket subject for approval of FAQ article."
-msgstr ""
+msgstr "Oggetto del ticket per l'approvazione dell'articolo delle FAQ."
+
+#. SysConfig
+msgid "Toolbar Item for a shortcut."
+msgstr "Elemento della barra degli strumenti per una scorciatoia."

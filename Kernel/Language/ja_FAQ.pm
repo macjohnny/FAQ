@@ -1,6 +1,5 @@
 # --
-# Kernel/Language/ja_FAQ.pm - translation file
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -90,6 +89,9 @@ sub Data {
     $Self->{Translation}->{'FAQ Articles'} = 'FAQ項目';
     $Self->{Translation}->{'No subcategories found.'} = '子カテゴリはありません。';
 
+    # Template: AgentFAQHistory
+    $Self->{Translation}->{'History of'} = '履歴: ';
+
     # Template: AgentFAQJournalOverviewSmall
     $Self->{Translation}->{'No FAQ Journal data found.'} = 'ジャーナルの情報がありません。';
 
@@ -113,21 +115,16 @@ sub Data {
     # Template: AgentFAQOverviewSmall
     $Self->{Translation}->{'No FAQ data found.'} = 'FAQデータはありません。';
 
-    # Template: AgentFAQPrint
-    $Self->{Translation}->{'FAQ-Info'} = 'FAQ情報';
-    $Self->{Translation}->{'Votes'} = 'Votes';
-    $Self->{Translation}->{'Last update'} = '最終更新日';
-
     # Template: AgentFAQSearch
     $Self->{Translation}->{'Keyword'} = 'キーワード';
     $Self->{Translation}->{'Vote (e. g. Equals 10 or GreaterThan 60)'} = '投票 (例. 10に等しい あるいは 60より大きい)';
-    $Self->{Translation}->{'Rate (e. g. Equals 25% or GreaterThan 75%)'} = 'レート (例. 25%に等しい あるいは 75より大きい)';
+    $Self->{Translation}->{'Rate (e. g. Equals 25% or GreaterThan 75%)'} = 'レート (例. 25%に等しい あるいは 75%より大きい)';
     $Self->{Translation}->{'Approved'} = '承認';
     $Self->{Translation}->{'Last changed by'} = '最終更新者';
-    $Self->{Translation}->{'FAQ Article Create Time (before/after)'} = 'FAQ項目作成日時 (以前/以後)';
-    $Self->{Translation}->{'FAQ Article Create Time (between)'} = 'FAQ項目作成日時 (間)';
-    $Self->{Translation}->{'FAQ Article Change Time (before/after)'} = 'FAQ項目変更日時 (以前/以後)';
-    $Self->{Translation}->{'FAQ Article Change Time (between)'} = 'FAQ項目変更日時 (間)';
+    $Self->{Translation}->{'FAQ Article Create Time (before/after)'} = 'FAQ項目作成日時 (範囲指定)';
+    $Self->{Translation}->{'FAQ Article Create Time (between)'} = 'FAQ項目作成日時 (期間指定)';
+    $Self->{Translation}->{'FAQ Article Change Time (before/after)'} = 'FAQ項目変更日時 (範囲指定)';
+    $Self->{Translation}->{'FAQ Article Change Time (between)'} = 'FAQ項目変更日時 (期間指定)';
 
     # Template: AgentFAQSearchOpenSearchDescriptionFulltext
     $Self->{Translation}->{'FAQFulltext'} = 'FAQ全文';
@@ -138,22 +135,21 @@ sub Data {
     $Self->{Translation}->{'Vote'} = '投票';
     $Self->{Translation}->{'No vote settings'} = '投票の設定がありません';
     $Self->{Translation}->{'Specific votes'} = '特定の投票';
-    $Self->{Translation}->{'e. g. Equals 10 or GreaterThan 60'} = '例. 10 に等しいまたは 60 より大きい';
+    $Self->{Translation}->{'e. g. Equals 10 or GreaterThan 60'} = '例. 10 に等しい あるいは 60 より大きい';
     $Self->{Translation}->{'Rate'} = 'レート';
     $Self->{Translation}->{'No rate settings'} = 'れーとの設定がありません';
     $Self->{Translation}->{'Specific rate'} = '特定のレート';
-    $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = '例. 25%以上または75%以上';
+    $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = '例. 25%に等しい あるいは 75%以上';
     $Self->{Translation}->{'FAQ Article Create Time'} = 'FAQ項目作成時間';
-    $Self->{Translation}->{'Specific date'} = '特定の日付';
-    $Self->{Translation}->{'Date range'} = '日付の範囲';
     $Self->{Translation}->{'FAQ Article Change Time'} = 'FAQ項目変更時間';
 
     # Template: AgentFAQZoom
     $Self->{Translation}->{'FAQ Information'} = 'FAQ情報';
     $Self->{Translation}->{'Rating'} = 'レーティング';
     $Self->{Translation}->{'out of 5'} = '5つ星のうち';
+    $Self->{Translation}->{'Votes'} = 'Votes';
     $Self->{Translation}->{'No votes found!'} = '投票はありません。';
-    $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = '投票はありません。この記事に始めて評価を投票しましょう。';
+    $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = '投票はありません。この記事に最初の評価を投票しましょう。';
     $Self->{Translation}->{'Download Attachment'} = '添付ファイルをダウンロード';
     $Self->{Translation}->{'To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS).'} =
         '(一部のOSにおいては)下記のリンクをオープンするためにクリック時に、Ctrl あるいは Cmd または Shiftキーを押下する必要がる場合があります。';
@@ -193,6 +189,19 @@ sub Data {
     # Template: PublicFAQSearchResultShort
     $Self->{Translation}->{'Back to FAQ Explorer'} = 'FAQエクスプローラーに戻る';
 
+    # Perl Module: Kernel/Modules/AgentFAQJournal.pm
+    $Self->{Translation}->{'FAQ Journal'} = 'FAQ ジャーナル';
+
+    # Perl Module: Kernel/Modules/AgentFAQPrint.pm
+    $Self->{Translation}->{'Last update'} = '最終更新日';
+    $Self->{Translation}->{'FAQ Dynamic Fields'} = 'FAQ ダイナミック・フィールド';
+
+    # Perl Module: Kernel/Modules/AgentFAQSearch.pm
+    $Self->{Translation}->{'No Result!'} = '結果がありません。';
+
+    # Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+    $Self->{Translation}->{'This article is empty!'} = 'この記事は空です!';
+
     # SysConfig
     $Self->{Translation}->{'A filter for HTML output to add links behind a defined string. The element Image allows two input kinds. First the name of an image (e.g. faq.png). In this case the OTRS image path will be used. The second possibility is to insert the link to the image.'} =
         'フィルタ定義　-定義された文字列（string）にリンクを追加するhtmlアウトプット-  エレメント・イメージは、2種類のインプットが可能です。1つ目、イメージの名前です (例. faq.png)。この場合、OTRSイメージ・パスが使用されます。2つ目、イメージにリンクを挿入することが可能性です。';
@@ -230,31 +239,30 @@ sub Data {
     $Self->{Translation}->{'Defines the default FAQ attribute for FAQ sorting in the FAQ Explorer of the public interface.'} =
         '公開画面（FAQ一覧）における、FAQ検索結果並び替えに利用する属性順の既定値を定義します。';
     $Self->{Translation}->{'Defines the default FAQ order in the FAQ Explorer result of the agent interface. Up: oldest on top. Down: latest on top.'} =
-        '担当者インターフェイスにおける、FAQ一覧の表示順の既定値を定義します。\'Up\'→古い順 / \'Down\'→新しい順';
+        '担当者インターフェイスにおける、FAQ一覧の表示順の既定値を定義します。Up: 古い順 / Down: 新しい順';
     $Self->{Translation}->{'Defines the default FAQ order in the FAQ Explorer result of the customer interface. Up: oldest on top. Down: latest on top.'} =
-        '顧客用画面における、FAQ一覧の表示順の既定値を定義します。\'Up\'→古い順 / \'Down\'→新しい順';
+        '顧客用画面における、FAQ一覧の表示順の既定値を定義します。Up: 古い順 / Down: 新しい順';
     $Self->{Translation}->{'Defines the default FAQ order in the FAQ Explorer result of the public interface. Up: oldest on top. Down: latest on top.'} =
-        '公開画面における、FAQ一覧の表示順の既定値を定義します。\'Up\'→古い順 / \'Down\'→新しい順';
+        '公開画面における、FAQ一覧の表示順の既定値を定義します。Up: 古い順 / Down: 新しい順';
     $Self->{Translation}->{'Defines the default FAQ order of a search result in the agent interface. Up: oldest on top. Down: latest on top.'} =
-        '担当者インターフェイス（FAQ一覧）における、FAQ検索結果並び順の既定値を定義します。\'Up\'→古い順 / \'Down\'→新しい順';
+        '担当者インターフェイス（FAQ一覧）における、FAQ検索結果並び順の既定値を定義します。Up: 古い順 / Down: 新しい順';
     $Self->{Translation}->{'Defines the default FAQ order of a search result in the customer interface. Up: oldest on top. Down: latest on top.'} =
-        '顧客用画面における、FAQ検索結果並び順の既定値を定義します。\'Up\'→古い順 / \'Down\'→新しい順';
+        '顧客用画面における、FAQ検索結果並び順の既定値を定義します。Up: 古い順 / Down: 新しい順';
     $Self->{Translation}->{'Defines the default FAQ order of a search result in the public interface. Up: oldest on top. Down: latest on top.'} =
-        '公開画面における、FAQ検索結果並び順の既定値を定義します。\'Up\'→古い順 / \'Down\'→新しい順';
+        '公開画面における、FAQ検索結果並び順の既定値を定義します。Up: 古い順 / Down: 新しい順';
     $Self->{Translation}->{'Defines the default shown FAQ search attribute for FAQ search screen.'} =
         'FAQ 検索画面に表示されるFAQ 検索属性のデフォルト値を定義する。';
     $Self->{Translation}->{'Defines the information to be inserted in a FAQ based Ticket. "Full FAQ" includes text, attachments and inline images.'} =
         'FAQ記事からチケットへの挿入される情報を定義する。「FAQすべて」にはテキスト・添付・及びインラインの画像が含まれます。';
     $Self->{Translation}->{'Defines the parameters for the dashboard backend. "Limit" defines the number of entries displayed by default. "Group" is used to restrict access to the plugin (e. g. Group: admin;group1;group2;). "Default" indicates if the plugin is enabled by default or if the user needs to enable it manually.'} =
-        '';
+        'ダッシュボードのバックエンドパラメータを定義。「Limit リミット」は標準で表示されるエントリーを定義します。「Group グループ」はプラグインへのアクセスを制限します。(例. Group: admin;group1;group2)。「Default　デフォルト」はプラグインが標準で有効になっているか、ユーザーが手動で有効にする必要があるかを定義します。';
     $Self->{Translation}->{'Defines the shown columns in the FAQ Explorer. This option has no effect on the position of the column.'} =
         '担当者画面における、FAQ一覧での表示項目の設定。この設定によって項目の並び順を制御することはできません。';
     $Self->{Translation}->{'Defines the shown columns in the FAQ journal. This option has no effect on the position of the column.'} =
         '顧客用画面における、FAQ一覧での表示項目の設定。この設定によって項目の並び順を制御することはできません。';
     $Self->{Translation}->{'Defines the shown columns in the FAQ search. This option has no effect on the position of the column.'} =
         '公開画面における、FAQ一覧での表示項目の設定。この設定によって項目の並び順を制御することはできません。';
-    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible.'} =
-        '「[FAQを挿入する]リンクが表示される箇所を定義します。注釈：AgentTicketActionCommonにはAgentTicketNote、AgentTicketClose、AgentTicketFreeText、AgentTicketOwner、AgentTicketPending、AgentTicketPriorityとAgentTicketResponsibleが含まれています。';
+    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed.'} = 'FAQリンクがどこに表示されるか定義する';
     $Self->{Translation}->{'Definition of FAQ item free text field.'} = 'FAQのフリーテキストフィールドの定義。';
     $Self->{Translation}->{'Delete this FAQ'} = 'この記事を削除';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ add screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
@@ -266,11 +274,11 @@ sub Data {
     $Self->{Translation}->{'Dynamic fields shown in the FAQ overview screen of the public interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
         '公開インターフェイスのFAQ追加画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効, 2 = 有効 さらに 必須';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ print screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '担当者インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効, 2 = 有効 さらに 必須';
+        '担当者インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ print screen of the customer interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '顧客インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効, 2 = 有効 さらに 必須';
+        '顧客インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ print screen of the public interface. Possible settings: 0 = Disabled, 1 = Enabled.'} =
-        '公開インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効, 2 = 有効 さらに 必須';
+        '公開インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ search screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and shown by default.'} =
         '担当者インターフェイスのFAQ検索画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効, 2 = 有効 さらに デフォルトで表示する';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ search screen of the customer interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and shown by default.'} =
@@ -288,12 +296,10 @@ sub Data {
     $Self->{Translation}->{'Edit this FAQ'} = 'この記事を編集';
     $Self->{Translation}->{'Enable multiple languages on FAQ module.'} = '多言語を有効にする';
     $Self->{Translation}->{'Enable voting mechanism on FAQ module.'} = '評価の機能を有効にする';
-    $Self->{Translation}->{'FAQ Journal'} = 'FAQ ジャーナル';
     $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = 'FAQジャーナル一覧(S)の表示数';
     $Self->{Translation}->{'FAQ Overview "Small" Limit'} = 'FAQ一覧(S)の表示数';
     $Self->{Translation}->{'FAQ limit per page for FAQ Journal Overview "Small"'} = 'FAQジャーナル一覧(S)の1ページ毎の表示数';
     $Self->{Translation}->{'FAQ limit per page for FAQ Overview "Small"'} = 'FAQ一覧(S)の1ページ毎の表示数';
-    $Self->{Translation}->{'FAQ path separator.'} = 'パスインフォを使用する際のセパレータ文字（例：\'/\'）';
     $Self->{Translation}->{'FAQ search backend router of the agent interface.'} = '担当者インターフェイスにおける、FAQ検索のバックエンドルータ';
     $Self->{Translation}->{'FAQ-Area'} = ' FAQ エリア';
     $Self->{Translation}->{'Field4'} = 'Field4';
@@ -413,6 +419,7 @@ sub Data {
         '‘ParentChild’リンク・タイプを使用して、‘FAQ’オブジェクトが他の‘Ticket’オブジェクトとリンクされるように、定義します。';
     $Self->{Translation}->{'Ticket body for approval of FAQ article.'} = 'FAQ承認チケット用　チケット本文';
     $Self->{Translation}->{'Ticket subject for approval of FAQ article.'} = 'FAQ承認チケット用　チケット件名 ';
+    $Self->{Translation}->{'Toolbar Item for a shortcut.'} = 'ショートカットのためのツールバー・アイテムです。';
 
 }
 

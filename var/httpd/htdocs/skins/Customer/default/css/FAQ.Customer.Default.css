@@ -15,6 +15,11 @@
  * @subsection  LayoutFixedSidebar
  */
 
+#Footer {
+    clear: both;
+    padding-top: 20px;
+}
+
 .LayoutFixedSidebar {
     display: block;
 }
@@ -159,43 +164,6 @@
 ul.FAQMiniList span {
     display: block;
     font-size: 10px;
-}
-
-/**
- * @subsection Category path
- */
-.FAQPathCategory {
-    padding: 4px 8px 4px;
-    color: #6A6A6A;
-    background: #eeeeee;
-    border-color: #E9E9E9;
-    border-image: none;
-    border-style: solid;
-    border-width: 1px;
-    position: relative;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.FAQPathCategory.FAQZoom {
-    margin-right: 5px;
-}
-
-.FAQPathCategory a {
-    color: #777;
-}
-
-.FAQPathCategory a:hover {
-    color: #444;
-}
-
-.FAQPathCategory h3 > a:last-of-type {
-    font-weight: bold;
-    color: #444;
-}
-
-.FAQPathCategory h3 > span:last-child {
-    display: none;
 }
 
 iframe.FAQField {

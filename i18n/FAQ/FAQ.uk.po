@@ -1,12 +1,15 @@
 # 
 # Translators:
+# Alexander <korsikov@rbcgrp.com>, 2015
+# Vira Motorko <ato4ka@i.ua>, 2015
+# Свистун Роман <svystun09@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2014-08-08 19:10+0200\n"
-"PO-Revision-Date: 2015-05-06 22:59+0000\n"
+"POT-Creation-Date: 2016-05-10 11:49+0000\n"
+"PO-Revision-Date: 2016-05-10 16:53+0000\n"
 "Last-Translator: Carlos Rodríguez <carlos.rodriguez@otrs.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/projects/p/OTRS/language/uk/)\n"
+"Language-Team: Ukrainian (http://www.transifex.com/otrs/OTRS/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,19 +18,19 @@ msgstr ""
 
 #. Template: AAAFAQ
 msgid "internal"
-msgstr ""
+msgstr "внутрішній"
 
 #. Template: AAAFAQ
 msgid "public"
-msgstr ""
+msgstr "публічне"
 
 #. Template: AAAFAQ
 msgid "external"
-msgstr ""
+msgstr "зовнiшнє"
 
 #. Template: AAAFAQ
 msgid "FAQ Number"
-msgstr ""
+msgstr "Номер FAQ"
 
 #. Template: AAAFAQ
 msgid "Latest updated FAQ articles"
@@ -55,15 +58,15 @@ msgstr "Провідник"
 
 #. Template: AAAFAQ
 msgid "public (all)"
-msgstr ""
+msgstr "Загальнодоступне"
 
 #. Template: AAAFAQ
 msgid "external (customer)"
-msgstr ""
+msgstr "відкрите (клієнтам)"
 
 #. Template: AAAFAQ
 msgid "internal (agent)"
-msgstr ""
+msgstr "відкрите (агентам)"
 
 #. Template: AAAFAQ
 msgid "Start day"
@@ -99,67 +102,67 @@ msgstr "Ви вже голосували!"
 
 #. Template: AAAFAQ
 msgid "FAQ Article Print"
-msgstr ""
+msgstr "Надрукувати статтю довідника"
 
 #. Template: AAAFAQ
 msgid "FAQ Articles (Top 10)"
-msgstr ""
+msgstr "Довідник (найкращі 10 статтей)"
 
 #. Template: AAAFAQ
 msgid "FAQ Articles (new created)"
-msgstr ""
+msgstr "Довідник (нові статті)"
 
 #. Template: AAAFAQ
 msgid "FAQ Articles (recently changed)"
-msgstr ""
+msgstr "Довідник (недавно змінені статті)"
 
 #. Template: AAAFAQ
 msgid "FAQ category updated!"
-msgstr ""
+msgstr "Оновленні категорії довідника."
 
 #. Template: AAAFAQ
 msgid "FAQ category added!"
-msgstr ""
+msgstr "Додані категорії довідникаа."
 
 #. Template: AAAFAQ
 msgid "A category should have a name!"
-msgstr ""
+msgstr "Категорія повинна мати назву!"
 
 #. Template: AAAFAQ
 msgid "This category already exists"
-msgstr ""
+msgstr "Дана категорія уже існує."
 
 #. Template: AAAFAQ
 msgid "FAQ language added!"
-msgstr ""
+msgstr "Додано мову довідки!"
 
 #. Template: AAAFAQ
 msgid "FAQ language updated!"
-msgstr ""
+msgstr "Оновлено мову довідки!"
 
 #. Template: AAAFAQ
 msgid "The name is required!"
-msgstr ""
+msgstr "Необхідно ввести назву!"
 
 #. Template: AAAFAQ
 msgid "This language already exists!"
-msgstr ""
+msgstr "Ця мова вже існує!"
 
 #. Template: AAAFAQ
 msgid "Symptom"
-msgstr ""
+msgstr "Симптоми"
 
 #. Template: AAAFAQ
 msgid "Solution"
-msgstr ""
+msgstr "Рішення"
 
 #. Template: AgentFAQAdd
 msgid "Add FAQ Article"
-msgstr ""
+msgstr "Добавити артикул довідника"
 
 #. Template: AgentFAQAdd
 msgid "Keywords"
-msgstr ""
+msgstr "Ключові слова"
 
 #. Template: AgentFAQAdd
 msgid "A category is required."
@@ -259,6 +262,10 @@ msgstr ""
 msgid "No subcategories found."
 msgstr ""
 
+#. Template: AgentFAQHistory
+msgid "History of"
+msgstr "Історія"
+
 #. Template: AgentFAQJournalOverviewSmall
 msgid "No FAQ Journal data found."
 msgstr ""
@@ -310,18 +317,6 @@ msgstr ""
 
 #. Template: AgentFAQOverviewSmall
 msgid "No FAQ data found."
-msgstr ""
-
-#. Template: AgentFAQPrint
-msgid "FAQ-Info"
-msgstr ""
-
-#. Template: AgentFAQPrint
-msgid "Votes"
-msgstr "Голосів"
-
-#. Template: AgentFAQPrint
-msgid "Last update"
 msgstr ""
 
 #. Template: AgentFAQSearch
@@ -409,14 +404,6 @@ msgid "FAQ Article Create Time"
 msgstr ""
 
 #. Template: AgentFAQSearchSmall
-msgid "Specific date"
-msgstr ""
-
-#. Template: AgentFAQSearchSmall
-msgid "Date range"
-msgstr ""
-
-#. Template: AgentFAQSearchSmall
 msgid "FAQ Article Change Time"
 msgstr ""
 
@@ -431,6 +418,10 @@ msgstr ""
 #. Template: AgentFAQZoom
 msgid "out of 5"
 msgstr ""
+
+#. Template: AgentFAQZoom
+msgid "Votes"
+msgstr "Голосів"
 
 #. Template: AgentFAQZoom
 msgid "No votes found!"
@@ -539,6 +530,26 @@ msgstr ""
 
 #. Template: PublicFAQSearchResultShort
 msgid "Back to FAQ Explorer"
+msgstr ""
+
+#. Perl Module: Kernel/Modules/AgentFAQJournal.pm
+msgid "FAQ Journal"
+msgstr ""
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "Last update"
+msgstr ""
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "FAQ Dynamic Fields"
+msgstr ""
+
+#. Perl Module: Kernel/Modules/AgentFAQSearch.pm
+msgid "No Result!"
+msgstr ""
+
+#. Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+msgid "This article is empty!"
 msgstr ""
 
 #. SysConfig
@@ -721,11 +732,7 @@ msgid ""
 msgstr ""
 
 #. SysConfig
-msgid ""
-"Defines where the 'Insert FAQ' link will be displayed. Note: "
-"AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, "
-"AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, "
-"AgentTicketPriority and AgentTicketResponsible."
+msgid "Defines where the 'Insert FAQ' link will be displayed."
 msgstr ""
 
 #. SysConfig
@@ -836,10 +843,6 @@ msgid "Enable voting mechanism on FAQ module."
 msgstr ""
 
 #. SysConfig
-msgid "FAQ Journal"
-msgstr ""
-
-#. SysConfig
 msgid "FAQ Journal Overview \"Small\" Limit"
 msgstr ""
 
@@ -853,10 +856,6 @@ msgstr ""
 
 #. SysConfig
 msgid "FAQ limit per page for FAQ Overview \"Small\""
-msgstr ""
-
-#. SysConfig
-msgid "FAQ path separator."
 msgstr ""
 
 #. SysConfig
@@ -1231,4 +1230,8 @@ msgstr ""
 
 #. SysConfig
 msgid "Ticket subject for approval of FAQ article."
+msgstr ""
+
+#. SysConfig
+msgid "Toolbar Item for a shortcut."
 msgstr ""

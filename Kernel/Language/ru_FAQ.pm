@@ -1,6 +1,5 @@
 # --
-# Kernel/Language/ru_FAQ.pm - translation file
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -90,6 +89,9 @@ sub Data {
     $Self->{Translation}->{'FAQ Articles'} = 'Статьи FAQ';
     $Self->{Translation}->{'No subcategories found.'} = 'Подразделы не найдены.';
 
+    # Template: AgentFAQHistory
+    $Self->{Translation}->{'History of'} = 'История для';
+
     # Template: AgentFAQJournalOverviewSmall
     $Self->{Translation}->{'No FAQ Journal data found.'} = 'Данных журнала FAQ нет.';
 
@@ -112,11 +114,6 @@ sub Data {
 
     # Template: AgentFAQOverviewSmall
     $Self->{Translation}->{'No FAQ data found.'} = 'Данные FAQ не найдены.';
-
-    # Template: AgentFAQPrint
-    $Self->{Translation}->{'FAQ-Info'} = 'Информация FAQ';
-    $Self->{Translation}->{'Votes'} = 'Голоса';
-    $Self->{Translation}->{'Last update'} = 'Последнее обновление';
 
     # Template: AgentFAQSearch
     $Self->{Translation}->{'Keyword'} = 'Ключевое слово';
@@ -144,14 +141,13 @@ sub Data {
     $Self->{Translation}->{'Specific rate'} = 'Опредеделенные оценки';
     $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = 'например, равно 25% или более чем 75%';
     $Self->{Translation}->{'FAQ Article Create Time'} = 'Время создания статьи FAQ';
-    $Self->{Translation}->{'Specific date'} = 'Определенная дата';
-    $Self->{Translation}->{'Date range'} = 'Диапазон дат';
     $Self->{Translation}->{'FAQ Article Change Time'} = 'Время изменения статьи FAQ';
 
     # Template: AgentFAQZoom
     $Self->{Translation}->{'FAQ Information'} = 'Информация FAQ';
     $Self->{Translation}->{'Rating'} = 'Оценка';
     $Self->{Translation}->{'out of 5'} = 'из 5';
+    $Self->{Translation}->{'Votes'} = 'Голоса';
     $Self->{Translation}->{'No votes found!'} = 'Голосов не найдено!';
     $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = 'Оценок не найдено! Оцените эту статью FAQ первым.';
     $Self->{Translation}->{'Download Attachment'} = 'Скачать вложение';
@@ -193,11 +189,24 @@ sub Data {
     # Template: PublicFAQSearchResultShort
     $Self->{Translation}->{'Back to FAQ Explorer'} = 'Вернуться в обзор FAQ';
 
+    # Perl Module: Kernel/Modules/AgentFAQJournal.pm
+    $Self->{Translation}->{'FAQ Journal'} = 'Журнал FAQ';
+
+    # Perl Module: Kernel/Modules/AgentFAQPrint.pm
+    $Self->{Translation}->{'Last update'} = 'Последнее обновление';
+    $Self->{Translation}->{'FAQ Dynamic Fields'} = 'Динамические поля для FAQ';
+
+    # Perl Module: Kernel/Modules/AgentFAQSearch.pm
+    $Self->{Translation}->{'No Result!'} = 'Нет результата/Решения!';
+
+    # Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+    $Self->{Translation}->{'This article is empty!'} = 'Эта статья пуста!';
+
     # SysConfig
     $Self->{Translation}->{'A filter for HTML output to add links behind a defined string. The element Image allows two input kinds. First the name of an image (e.g. faq.png). In this case the OTRS image path will be used. The second possibility is to insert the link to the image.'} =
         'Фильтр для HTML для добавления ссылки позади заданной строки. Элемент Image может быть введен двумя способами. Первый - это имя файла(т.е. faq.png). В этом случае используется путь к файлам изображений OTRS. Второй вариант в указании ссылки на изображение(например, http://otrs.org/faq.png).';
     $Self->{Translation}->{'CSS color for the voting result.'} = 'CSS-цвет для результата голосования.';
-    $Self->{Translation}->{'Cache Time To Leave for FAQ items.'} = '';
+    $Self->{Translation}->{'Cache Time To Leave for FAQ items.'} = 'Время для выхода из редактирования FAQ пункта';
     $Self->{Translation}->{'Category Management'} = 'Управление категориями';
     $Self->{Translation}->{'Decimal places of the voting result.'} = 'Десятичных знаков в результате голосования';
     $Self->{Translation}->{'Default category name.'} = 'Название категории по-умолчанию.';
@@ -246,15 +255,14 @@ sub Data {
     $Self->{Translation}->{'Defines the information to be inserted in a FAQ based Ticket. "Full FAQ" includes text, attachments and inline images.'} =
         'Определяет перечень информации включаемой в заявку из FAQ. "Full FAQ" включает ткест, вложения и встроенные изображения.';
     $Self->{Translation}->{'Defines the parameters for the dashboard backend. "Limit" defines the number of entries displayed by default. "Group" is used to restrict access to the plugin (e. g. Group: admin;group1;group2;). "Default" indicates if the plugin is enabled by default or if the user needs to enable it manually.'} =
-        '';
+        'Задает параметры для отображения в Дайджесте. "Limit" задает количество статей, отображаемых по умолчанию. "Group" используется для ограничения доступа к данным модуля (например, Group: admin;group1;group2;). "Default" означает, что модуль либо включен по умолчанию, либо агент, при необходимости, может его включить вручную.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ Explorer. This option has no effect on the position of the column.'} =
         'Задает перечень колонок, отображаемых в Обзоре FAQ. Этот параметр не влияет на порядок колонок.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ journal. This option has no effect on the position of the column.'} =
         'Задает перечень колонок, отображаемых в Истории FAQ. Этот параметр не влияет на порядок колонок.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ search. This option has no effect on the position of the column.'} =
         'Задает перечень колонок, отображаемых в результатах поиска в FAQ. Этот параметр не влияет на порядок колонок.';
-    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible.'} =
-        'Задает, на каких экранах ссылка на вставку из FAQ должна отображаться. Примечание: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority и AgentTicketResponsible.';
+    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed.'} = 'Определяет, где будет отображаться ссылка "Вставить из FAQ"/\'Insert FAQ\'';
     $Self->{Translation}->{'Definition of FAQ item free text field.'} = 'Определение свободных полей элементов FAQ.';
     $Self->{Translation}->{'Delete this FAQ'} = 'Удалить этот FAQ';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ add screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
@@ -288,12 +296,10 @@ sub Data {
     $Self->{Translation}->{'Edit this FAQ'} = 'Изменить этот FAQ';
     $Self->{Translation}->{'Enable multiple languages on FAQ module.'} = 'Разрешить многоязычность в модуле FAQ.';
     $Self->{Translation}->{'Enable voting mechanism on FAQ module.'} = 'Разрешить функцию оценки в модуле FAQ.';
-    $Self->{Translation}->{'FAQ Journal'} = 'Журнал FAQ';
     $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = 'Количество статей, отображаемых при просмотре Журнала FAQ в "Small" формате';
     $Self->{Translation}->{'FAQ Overview "Small" Limit'} = 'Количество статей, отображаемых при просмотре Обзора FAQ в "Small" формате';
     $Self->{Translation}->{'FAQ limit per page for FAQ Journal Overview "Small"'} = 'Количество статей при просмотре Журнала FAQ в "Small" формате на страницу';
     $Self->{Translation}->{'FAQ limit per page for FAQ Overview "Small"'} = 'Количество статей, отображаемых при просмотре Журнала FAQ в "Small" формате на страницу';
-    $Self->{Translation}->{'FAQ path separator.'} = 'Разделитель пути FAQ.';
     $Self->{Translation}->{'FAQ search backend router of the agent interface.'} = 'Включить и настроить модуль поиска FAQ для интерфейса агента.';
     $Self->{Translation}->{'FAQ-Area'} = 'Область FAQ';
     $Self->{Translation}->{'Field4'} = 'Поле4';
@@ -413,6 +419,7 @@ sub Data {
         'Этот параметр задает возможность связать объект \'FAQ\' с другими объектами типа "Заявка" используя тип связи \'ParentChild\'.';
     $Self->{Translation}->{'Ticket body for approval of FAQ article.'} = 'Тело заявки на одобрение статьи FAQ.';
     $Self->{Translation}->{'Ticket subject for approval of FAQ article.'} = 'Тема заявки на одобрение статьи FAQ.';
+    $Self->{Translation}->{'Toolbar Item for a shortcut.'} = 'Описание ярлыка(иконки) для навигационной панели.';
 
 }
 

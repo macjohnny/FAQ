@@ -1,6 +1,5 @@
 # --
-# Kernel/Language/da_FAQ.pm - translation file
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -17,19 +16,19 @@ sub Data {
     my $Self = shift;
 
     # Template: AAAFAQ
-    $Self->{Translation}->{'internal'} = '';
-    $Self->{Translation}->{'public'} = '';
-    $Self->{Translation}->{'external'} = '';
-    $Self->{Translation}->{'FAQ Number'} = '';
+    $Self->{Translation}->{'internal'} = 'intern';
+    $Self->{Translation}->{'public'} = 'offentlig';
+    $Self->{Translation}->{'external'} = 'ekstern';
+    $Self->{Translation}->{'FAQ Number'} = 'FAQ Nummer';
     $Self->{Translation}->{'Latest updated FAQ articles'} = 'Sidst ændrede artikler';
     $Self->{Translation}->{'Latest created FAQ articles'} = 'Nyeste artikler';
     $Self->{Translation}->{'Top 10 FAQ articles'} = 'Top 10 artikler';
     $Self->{Translation}->{'Subcategory of'} = 'Underkategori af';
     $Self->{Translation}->{'No rate selected!'} = 'Ingen rate valgt!';
     $Self->{Translation}->{'Explorer'} = '';
-    $Self->{Translation}->{'public (all)'} = '';
-    $Self->{Translation}->{'external (customer)'} = '';
-    $Self->{Translation}->{'internal (agent)'} = '';
+    $Self->{Translation}->{'public (all)'} = 'offentlig (alle)';
+    $Self->{Translation}->{'external (customer)'} = 'ekstern (kunde)';
+    $Self->{Translation}->{'internal (agent)'} = 'intern (agent)';
     $Self->{Translation}->{'Start day'} = 'Start dag';
     $Self->{Translation}->{'Start month'} = 'Start måned';
     $Self->{Translation}->{'Start year'} = 'Start år';
@@ -63,7 +62,7 @@ sub Data {
     $Self->{Translation}->{'FAQ Category Management'} = '';
     $Self->{Translation}->{'Add category'} = '';
     $Self->{Translation}->{'Delete Category'} = '';
-    $Self->{Translation}->{'Ok'} = '';
+    $Self->{Translation}->{'Ok'} = 'Ok';
     $Self->{Translation}->{'Add Category'} = '';
     $Self->{Translation}->{'Edit Category'} = '';
     $Self->{Translation}->{'Please select at least one permission group.'} = '';
@@ -90,6 +89,9 @@ sub Data {
     $Self->{Translation}->{'FAQ Articles'} = '';
     $Self->{Translation}->{'No subcategories found.'} = '';
 
+    # Template: AgentFAQHistory
+    $Self->{Translation}->{'History of'} = 'Historik af';
+
     # Template: AgentFAQJournalOverviewSmall
     $Self->{Translation}->{'No FAQ Journal data found.'} = '';
 
@@ -112,11 +114,6 @@ sub Data {
 
     # Template: AgentFAQOverviewSmall
     $Self->{Translation}->{'No FAQ data found.'} = '';
-
-    # Template: AgentFAQPrint
-    $Self->{Translation}->{'FAQ-Info'} = '';
-    $Self->{Translation}->{'Votes'} = 'Stemmer';
-    $Self->{Translation}->{'Last update'} = '';
 
     # Template: AgentFAQSearch
     $Self->{Translation}->{'Keyword'} = '';
@@ -144,14 +141,13 @@ sub Data {
     $Self->{Translation}->{'Specific rate'} = '';
     $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = '';
     $Self->{Translation}->{'FAQ Article Create Time'} = '';
-    $Self->{Translation}->{'Specific date'} = '';
-    $Self->{Translation}->{'Date range'} = '';
     $Self->{Translation}->{'FAQ Article Change Time'} = '';
 
     # Template: AgentFAQZoom
     $Self->{Translation}->{'FAQ Information'} = '';
     $Self->{Translation}->{'Rating'} = '';
     $Self->{Translation}->{'out of 5'} = '';
+    $Self->{Translation}->{'Votes'} = 'Stemmer';
     $Self->{Translation}->{'No votes found!'} = '';
     $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = '';
     $Self->{Translation}->{'Download Attachment'} = '';
@@ -192,6 +188,19 @@ sub Data {
 
     # Template: PublicFAQSearchResultShort
     $Self->{Translation}->{'Back to FAQ Explorer'} = '';
+
+    # Perl Module: Kernel/Modules/AgentFAQJournal.pm
+    $Self->{Translation}->{'FAQ Journal'} = '';
+
+    # Perl Module: Kernel/Modules/AgentFAQPrint.pm
+    $Self->{Translation}->{'Last update'} = '';
+    $Self->{Translation}->{'FAQ Dynamic Fields'} = '';
+
+    # Perl Module: Kernel/Modules/AgentFAQSearch.pm
+    $Self->{Translation}->{'No Result!'} = '';
+
+    # Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+    $Self->{Translation}->{'This article is empty!'} = '';
 
     # SysConfig
     $Self->{Translation}->{'A filter for HTML output to add links behind a defined string. The element Image allows two input kinds. First the name of an image (e.g. faq.png). In this case the OTRS image path will be used. The second possibility is to insert the link to the image.'} =
@@ -253,8 +262,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Defines the shown columns in the FAQ search. This option has no effect on the position of the column.'} =
         '';
-    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible.'} =
-        '';
+    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed.'} = '';
     $Self->{Translation}->{'Definition of FAQ item free text field.'} = '';
     $Self->{Translation}->{'Delete this FAQ'} = '';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ add screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
@@ -288,12 +296,10 @@ sub Data {
     $Self->{Translation}->{'Edit this FAQ'} = '';
     $Self->{Translation}->{'Enable multiple languages on FAQ module.'} = '';
     $Self->{Translation}->{'Enable voting mechanism on FAQ module.'} = '';
-    $Self->{Translation}->{'FAQ Journal'} = '';
     $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = '';
     $Self->{Translation}->{'FAQ Overview "Small" Limit'} = '';
     $Self->{Translation}->{'FAQ limit per page for FAQ Journal Overview "Small"'} = '';
     $Self->{Translation}->{'FAQ limit per page for FAQ Overview "Small"'} = '';
-    $Self->{Translation}->{'FAQ path separator.'} = '';
     $Self->{Translation}->{'FAQ search backend router of the agent interface.'} = '';
     $Self->{Translation}->{'FAQ-Area'} = '';
     $Self->{Translation}->{'Field4'} = '';
@@ -413,6 +419,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Ticket body for approval of FAQ article.'} = '';
     $Self->{Translation}->{'Ticket subject for approval of FAQ article.'} = '';
+    $Self->{Translation}->{'Toolbar Item for a shortcut.'} = '';
 
 }
 

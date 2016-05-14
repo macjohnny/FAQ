@@ -1,6 +1,5 @@
 # --
-# Kernel/Language/sv_FAQ.pm - translation file
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -25,7 +24,7 @@ sub Data {
     $Self->{Translation}->{'Latest created FAQ articles'} = 'Senast skapade FAQ-artiklar';
     $Self->{Translation}->{'Top 10 FAQ articles'} = 'Topp 10 FAQ-artiklar';
     $Self->{Translation}->{'Subcategory of'} = 'Underkategori till';
-    $Self->{Translation}->{'No rate selected!'} = '';
+    $Self->{Translation}->{'No rate selected!'} = 'Inget betyg satt!';
     $Self->{Translation}->{'Explorer'} = 'Utforskare';
     $Self->{Translation}->{'public (all)'} = 'offentlig (alla)';
     $Self->{Translation}->{'external (customer)'} = 'extern (kunder)';
@@ -50,8 +49,8 @@ sub Data {
     $Self->{Translation}->{'FAQ language updated!'} = 'FAQ-språk uppdaterat!';
     $Self->{Translation}->{'The name is required!'} = 'Namn krävs!';
     $Self->{Translation}->{'This language already exists!'} = 'Detta språk finns redan!';
-    $Self->{Translation}->{'Symptom'} = '';
-    $Self->{Translation}->{'Solution'} = '';
+    $Self->{Translation}->{'Symptom'} = 'Symptom';
+    $Self->{Translation}->{'Solution'} = 'Lösning';
 
     # Template: AgentFAQAdd
     $Self->{Translation}->{'Add FAQ Article'} = 'Skapa FAQ artikel';
@@ -66,14 +65,14 @@ sub Data {
     $Self->{Translation}->{'Ok'} = 'Ok';
     $Self->{Translation}->{'Add Category'} = 'Skapa kategori';
     $Self->{Translation}->{'Edit Category'} = 'Redigera kategori';
-    $Self->{Translation}->{'Please select at least one permission group.'} = '';
+    $Self->{Translation}->{'Please select at least one permission group.'} = 'Vänligen välj minst en rättighetsgrupp';
     $Self->{Translation}->{'Agent groups that can access articles in this category.'} = 'Agent-grupper med åtkomst till artiklarna i denna kategori.';
     $Self->{Translation}->{'Will be shown as comment in Explorer.'} = 'Visas som kommentar i Utforskaren.';
     $Self->{Translation}->{'Do you really want to delete this category?'} = 'Vill du verkligen ta bort denna kategori?';
     $Self->{Translation}->{'You can not delete this category. It is used in at least one FAQ article and/or is parent of at least one other category'} =
-        '';
-    $Self->{Translation}->{'This category is used in the following FAQ article(s)'} = '';
-    $Self->{Translation}->{'This category is parent of the following subcategories'} = '';
+        'Du kan inte ta bort denna kategorin. Det används av minst en FAQ-artikel!';
+    $Self->{Translation}->{'This category is used in the following FAQ article(s)'} = 'Denna kategori används av följande FAQ-artiklar';
+    $Self->{Translation}->{'This category is parent of the following subcategories'} = 'Denna kategori är förälder för följande underkategroier';
 
     # Template: AgentFAQDelete
     $Self->{Translation}->{'Do you really want to delete this FAQ article?'} = 'Vill du verkligen ta bort denna FAQ-artikel?';
@@ -90,8 +89,11 @@ sub Data {
     $Self->{Translation}->{'FAQ Articles'} = 'FAQ-artiklar';
     $Self->{Translation}->{'No subcategories found.'} = 'Inga underkategorier hittades.';
 
+    # Template: AgentFAQHistory
+    $Self->{Translation}->{'History of'} = 'Historik för';
+
     # Template: AgentFAQJournalOverviewSmall
-    $Self->{Translation}->{'No FAQ Journal data found.'} = '';
+    $Self->{Translation}->{'No FAQ Journal data found.'} = 'Det finns ingen data i FAQ-loggboken';
 
     # Template: AgentFAQLanguage
     $Self->{Translation}->{'FAQ Language Management'} = 'FAQ språkhantering';
@@ -104,7 +106,7 @@ sub Data {
     $Self->{Translation}->{'Do you really want to delete this language?'} = 'Vill du verkligen ta bort detta språk?';
     $Self->{Translation}->{'You can not delete this language. It is used in at least one FAQ article!'} =
         'Du kan inte ta bort detta språk. Det används i minst en FAQ-artikel!';
-    $Self->{Translation}->{'This language is used in the following FAQ Article(s)'} = '';
+    $Self->{Translation}->{'This language is used in the following FAQ Article(s)'} = 'Detta språk används av följande FAQ-artiklar';
 
     # Template: AgentFAQOverviewNavBar
     $Self->{Translation}->{'Context Settings'} = 'Anpassa vy';
@@ -113,28 +115,23 @@ sub Data {
     # Template: AgentFAQOverviewSmall
     $Self->{Translation}->{'No FAQ data found.'} = 'Ingen FAQ-information hittades.';
 
-    # Template: AgentFAQPrint
-    $Self->{Translation}->{'FAQ-Info'} = 'FAQ-information';
-    $Self->{Translation}->{'Votes'} = 'Röster';
-    $Self->{Translation}->{'Last update'} = 'Senast uppdaterad';
-
     # Template: AgentFAQSearch
     $Self->{Translation}->{'Keyword'} = 'Nyckelord';
-    $Self->{Translation}->{'Vote (e. g. Equals 10 or GreaterThan 60)'} = '';
-    $Self->{Translation}->{'Rate (e. g. Equals 25% or GreaterThan 75%)'} = '';
+    $Self->{Translation}->{'Vote (e. g. Equals 10 or GreaterThan 60)'} = 'Röster (ex. lika med 10 eller fler än 60)';
+    $Self->{Translation}->{'Rate (e. g. Equals 25% or GreaterThan 75%)'} = 'Betyg (ex. lika med 25% eller mer än 75%)';
     $Self->{Translation}->{'Approved'} = 'Godkänd';
     $Self->{Translation}->{'Last changed by'} = 'Senast ändrad av';
-    $Self->{Translation}->{'FAQ Article Create Time (before/after)'} = '';
-    $Self->{Translation}->{'FAQ Article Create Time (between)'} = '';
-    $Self->{Translation}->{'FAQ Article Change Time (before/after)'} = '';
-    $Self->{Translation}->{'FAQ Article Change Time (between)'} = '';
+    $Self->{Translation}->{'FAQ Article Create Time (before/after)'} = 'FAQ-Artikel Skapad Tid (före/efter)';
+    $Self->{Translation}->{'FAQ Article Create Time (between)'} = 'FAQ-Artikel Skapad Tid (mellan)';
+    $Self->{Translation}->{'FAQ Article Change Time (before/after)'} = 'FAQ Artikel Ändrad Tid (före/efter)';
+    $Self->{Translation}->{'FAQ Article Change Time (between)'} = 'FAQ-Artikel Ändrad Tid (mellan)';
 
     # Template: AgentFAQSearchOpenSearchDescriptionFulltext
-    $Self->{Translation}->{'FAQFulltext'} = '';
+    $Self->{Translation}->{'FAQFulltext'} = 'FAQ-Fulltext';
 
     # Template: AgentFAQSearchSmall
     $Self->{Translation}->{'FAQ Search'} = 'FAQ sök';
-    $Self->{Translation}->{'Profile Selection'} = '';
+    $Self->{Translation}->{'Profile Selection'} = 'Profilval';
     $Self->{Translation}->{'Vote'} = 'Rösta';
     $Self->{Translation}->{'No vote settings'} = 'Inga röstinställningar';
     $Self->{Translation}->{'Specific votes'} = 'Specifika röster';
@@ -143,20 +140,19 @@ sub Data {
     $Self->{Translation}->{'No rate settings'} = 'Inga betygsinställningar';
     $Self->{Translation}->{'Specific rate'} = 'Specifikt betyg';
     $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = 'e.g. Lika med 25% eller StörreÄn 75%';
-    $Self->{Translation}->{'FAQ Article Create Time'} = '';
-    $Self->{Translation}->{'Specific date'} = 'Specifikt datum';
-    $Self->{Translation}->{'Date range'} = 'Datumintervall';
+    $Self->{Translation}->{'FAQ Article Create Time'} = 'FAQ-Artikel Skapad Tid';
     $Self->{Translation}->{'FAQ Article Change Time'} = 'FAQ artikel ändringstidpunkt';
 
     # Template: AgentFAQZoom
     $Self->{Translation}->{'FAQ Information'} = 'FAQ-Information';
     $Self->{Translation}->{'Rating'} = 'Betyg';
     $Self->{Translation}->{'out of 5'} = 'av 5';
+    $Self->{Translation}->{'Votes'} = 'Röster';
     $Self->{Translation}->{'No votes found!'} = 'Inga röster funna!';
     $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = 'Inga röster funna! Bli den första att betygsätta denna FAQ-artikel.';
     $Self->{Translation}->{'Download Attachment'} = 'Ladda ner bilaga';
     $Self->{Translation}->{'To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS).'} =
-        '';
+        'För att öppna länkar i följande beskrivningsblock behöver du kanske trycka <Ctrl> eller <Cmd> eller <Shift> medan du klickar på länken (beroende på vilken webbläsare eller operativsystem du har).';
     $Self->{Translation}->{'How helpful was this article? Please give us your rating and help to improve the FAQ Database. Thank You!'} =
         'Hur hjälpsam var den här artikeln? Vänligen ge oss ditt betyg och hjälp oss förbättra FAQ-databasen. Tack!';
     $Self->{Translation}->{'not helpful'} = 'inte hjälpsam';
@@ -192,6 +188,19 @@ sub Data {
 
     # Template: PublicFAQSearchResultShort
     $Self->{Translation}->{'Back to FAQ Explorer'} = 'Tillbaka till FAQ-utforskaren';
+
+    # Perl Module: Kernel/Modules/AgentFAQJournal.pm
+    $Self->{Translation}->{'FAQ Journal'} = 'FAQ-loggboken';
+
+    # Perl Module: Kernel/Modules/AgentFAQPrint.pm
+    $Self->{Translation}->{'Last update'} = 'Senast uppdaterad';
+    $Self->{Translation}->{'FAQ Dynamic Fields'} = 'FAQ Dynamiska Fält';
+
+    # Perl Module: Kernel/Modules/AgentFAQSearch.pm
+    $Self->{Translation}->{'No Result!'} = 'Inget resultat!';
+
+    # Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+    $Self->{Translation}->{'This article is empty!'} = 'Den här artikeln är tom!';
 
     # SysConfig
     $Self->{Translation}->{'A filter for HTML output to add links behind a defined string. The element Image allows two input kinds. First the name of an image (e.g. faq.png). In this case the OTRS image path will be used. The second possibility is to insert the link to the image.'} =
@@ -253,8 +262,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Defines the shown columns in the FAQ search. This option has no effect on the position of the column.'} =
         '';
-    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible.'} =
-        '';
+    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed.'} = '';
     $Self->{Translation}->{'Definition of FAQ item free text field.'} = '';
     $Self->{Translation}->{'Delete this FAQ'} = 'Radera denna FAQ';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ add screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
@@ -288,12 +296,10 @@ sub Data {
     $Self->{Translation}->{'Edit this FAQ'} = 'Redigera FAQ';
     $Self->{Translation}->{'Enable multiple languages on FAQ module.'} = '';
     $Self->{Translation}->{'Enable voting mechanism on FAQ module.'} = '';
-    $Self->{Translation}->{'FAQ Journal'} = 'FAQ Journal';
     $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = '';
     $Self->{Translation}->{'FAQ Overview "Small" Limit'} = '';
     $Self->{Translation}->{'FAQ limit per page for FAQ Journal Overview "Small"'} = '';
     $Self->{Translation}->{'FAQ limit per page for FAQ Overview "Small"'} = '';
-    $Self->{Translation}->{'FAQ path separator.'} = '';
     $Self->{Translation}->{'FAQ search backend router of the agent interface.'} = '';
     $Self->{Translation}->{'FAQ-Area'} = '';
     $Self->{Translation}->{'Field4'} = '';
@@ -304,7 +310,7 @@ sub Data {
     $Self->{Translation}->{'Include internal fields on a FAQ based Ticket.'} = '';
     $Self->{Translation}->{'Include the name of each field in a FAQ based Ticket.'} = '';
     $Self->{Translation}->{'Interfaces where the quick search should be shown.'} = '';
-    $Self->{Translation}->{'Journal'} = 'Journal';
+    $Self->{Translation}->{'Journal'} = 'Loggbok';
     $Self->{Translation}->{'Language Management'} = 'Språkhantering';
     $Self->{Translation}->{'Link another object to this FAQ item'} = 'Länka ett annat objekt till denna FAQ-artikel';
     $Self->{Translation}->{'List of state types which can be used in the agent interface.'} =
@@ -413,6 +419,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Ticket body for approval of FAQ article.'} = '';
     $Self->{Translation}->{'Ticket subject for approval of FAQ article.'} = '';
+    $Self->{Translation}->{'Toolbar Item for a shortcut.'} = '';
 
 }
 

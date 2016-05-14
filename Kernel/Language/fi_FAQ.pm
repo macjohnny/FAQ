@@ -1,6 +1,5 @@
 # --
-# Kernel/Language/fi_FAQ.pm - translation file
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -20,13 +19,13 @@ sub Data {
     $Self->{Translation}->{'internal'} = 'sisäinen';
     $Self->{Translation}->{'public'} = 'julkinen';
     $Self->{Translation}->{'external'} = 'ulkoinen';
-    $Self->{Translation}->{'FAQ Number'} = 'FAQ-numero';
+    $Self->{Translation}->{'FAQ Number'} = 'UKK numero';
     $Self->{Translation}->{'Latest updated FAQ articles'} = 'Viimeksi päivitetyt artikkelit';
     $Self->{Translation}->{'Latest created FAQ articles'} = 'Viimeksi julkaistut artikkelit';
     $Self->{Translation}->{'Top 10 FAQ articles'} = 'Top 10 artikkelit';
     $Self->{Translation}->{'Subcategory of'} = 'Alakategoria';
     $Self->{Translation}->{'No rate selected!'} = 'Ei valittua arviota';
-    $Self->{Translation}->{'Explorer'} = '';
+    $Self->{Translation}->{'Explorer'} = 'Selain';
     $Self->{Translation}->{'public (all)'} = 'julkinen (kaikki)';
     $Self->{Translation}->{'external (customer)'} = 'ulkoinen (asiakkaat)';
     $Self->{Translation}->{'internal (agent)'} = 'sisäinen (agentit)';
@@ -51,16 +50,16 @@ sub Data {
     $Self->{Translation}->{'The name is required!'} = 'Nimi on pakollinen!';
     $Self->{Translation}->{'This language already exists!'} = 'Tämä kieli on jo olemassa!';
     $Self->{Translation}->{'Symptom'} = '';
-    $Self->{Translation}->{'Solution'} = '';
+    $Self->{Translation}->{'Solution'} = 'Ratkaisu';
 
     # Template: AgentFAQAdd
-    $Self->{Translation}->{'Add FAQ Article'} = 'Lisää FAQ artikkeli';
-    $Self->{Translation}->{'Keywords'} = '';
+    $Self->{Translation}->{'Add FAQ Article'} = 'Lisää UKK artikkeli';
+    $Self->{Translation}->{'Keywords'} = 'Hakusanat';
     $Self->{Translation}->{'A category is required.'} = 'Kategoria on pakollinen.';
     $Self->{Translation}->{'Approval'} = 'Hyväksyntä';
 
     # Template: AgentFAQCategory
-    $Self->{Translation}->{'FAQ Category Management'} = 'FAQ:n Kategorioiden hallinta';
+    $Self->{Translation}->{'FAQ Category Management'} = 'UKK kategorioiden hallinta';
     $Self->{Translation}->{'Add category'} = 'Lisää kategoria';
     $Self->{Translation}->{'Delete Category'} = 'Poista kategoria';
     $Self->{Translation}->{'Ok'} = 'Ok';
@@ -79,7 +78,7 @@ sub Data {
     $Self->{Translation}->{'Do you really want to delete this FAQ article?'} = 'Haluatko varmasti poistaa tämän artikkelin?';
 
     # Template: AgentFAQEdit
-    $Self->{Translation}->{'FAQ'} = 'FAQ';
+    $Self->{Translation}->{'FAQ'} = 'UKK';
 
     # Template: AgentFAQExplorer
     $Self->{Translation}->{'FAQ Explorer'} = 'Selain';
@@ -90,11 +89,14 @@ sub Data {
     $Self->{Translation}->{'FAQ Articles'} = 'Artikkelit';
     $Self->{Translation}->{'No subcategories found.'} = 'Ei alakategorioita.';
 
+    # Template: AgentFAQHistory
+    $Self->{Translation}->{'History of'} = 'Historia:';
+
     # Template: AgentFAQJournalOverviewSmall
     $Self->{Translation}->{'No FAQ Journal data found.'} = '';
 
     # Template: AgentFAQLanguage
-    $Self->{Translation}->{'FAQ Language Management'} = 'FAQ:n kielten hallinta';
+    $Self->{Translation}->{'FAQ Language Management'} = 'UKK kielten hallinta';
     $Self->{Translation}->{'Use this feature if you want to work with multiple languges.'} =
         'Käytä tätä ominaisuutta, jos haluat käyttää useampaa kieltä.';
     $Self->{Translation}->{'Add language'} = 'Lisää kieli';
@@ -113,13 +115,8 @@ sub Data {
     # Template: AgentFAQOverviewSmall
     $Self->{Translation}->{'No FAQ data found.'} = 'Yhtään artikkelia ei löytynyt';
 
-    # Template: AgentFAQPrint
-    $Self->{Translation}->{'FAQ-Info'} = 'FAQ tiedot';
-    $Self->{Translation}->{'Votes'} = 'Äänestykset';
-    $Self->{Translation}->{'Last update'} = '';
-
     # Template: AgentFAQSearch
-    $Self->{Translation}->{'Keyword'} = '';
+    $Self->{Translation}->{'Keyword'} = 'Hakusana';
     $Self->{Translation}->{'Vote (e. g. Equals 10 or GreaterThan 60)'} = '';
     $Self->{Translation}->{'Rate (e. g. Equals 25% or GreaterThan 75%)'} = '';
     $Self->{Translation}->{'Approved'} = '';
@@ -133,7 +130,7 @@ sub Data {
     $Self->{Translation}->{'FAQFulltext'} = '';
 
     # Template: AgentFAQSearchSmall
-    $Self->{Translation}->{'FAQ Search'} = 'FAQ haku';
+    $Self->{Translation}->{'FAQ Search'} = 'UKK haku';
     $Self->{Translation}->{'Profile Selection'} = '';
     $Self->{Translation}->{'Vote'} = '';
     $Self->{Translation}->{'No vote settings'} = '';
@@ -144,30 +141,29 @@ sub Data {
     $Self->{Translation}->{'Specific rate'} = '';
     $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = '';
     $Self->{Translation}->{'FAQ Article Create Time'} = '';
-    $Self->{Translation}->{'Specific date'} = '';
-    $Self->{Translation}->{'Date range'} = '';
     $Self->{Translation}->{'FAQ Article Change Time'} = '';
 
     # Template: AgentFAQZoom
-    $Self->{Translation}->{'FAQ Information'} = 'FAQ-informaatio';
+    $Self->{Translation}->{'FAQ Information'} = 'UKK tiedot';
     $Self->{Translation}->{'Rating'} = 'Arvostelut';
     $Self->{Translation}->{'out of 5'} = '/ 5';
+    $Self->{Translation}->{'Votes'} = 'Äänestykset';
     $Self->{Translation}->{'No votes found!'} = 'Ei ääniä!';
     $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = 'Ei annettuja ääniä! Äänestä tätä artikkelia ensimmäisenä.';
     $Self->{Translation}->{'Download Attachment'} = 'Lataa liitetiedosto';
     $Self->{Translation}->{'To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS).'} =
         '';
     $Self->{Translation}->{'How helpful was this article? Please give us your rating and help to improve the FAQ Database. Thank You!'} =
-        'Kuinka hyödyllinen tämä artikkeli oli? Arvostele artikkeli, jotta voimme kehittää FAQ-tietokantaamme. Kiitos!';
+        'Kuinka hyödyllinen tämä artikkeli oli? Arvostele artikkeli, jotta voimme kehittää UKK-tietokantaamme. Kiitos!';
     $Self->{Translation}->{'not helpful'} = 'hyödytön';
     $Self->{Translation}->{'very helpful'} = 'hyödyllinen';
 
     # Template: AgentFAQZoomSmall
     $Self->{Translation}->{'Add FAQ title to article subject'} = '';
-    $Self->{Translation}->{'Insert FAQ Text'} = 'Lisää FAQ-teksti';
+    $Self->{Translation}->{'Insert FAQ Text'} = 'Lisää UKK teksti';
     $Self->{Translation}->{'Insert Full FAQ'} = '';
-    $Self->{Translation}->{'Insert FAQ Link'} = 'Lisää FAQ-linkki';
-    $Self->{Translation}->{'Insert FAQ Text & Link'} = 'Lisää FAQ-teksti ja -linkki';
+    $Self->{Translation}->{'Insert FAQ Link'} = 'Lisää UKK linkki';
+    $Self->{Translation}->{'Insert FAQ Text & Link'} = 'Lisää UKK teksti ja linkki';
     $Self->{Translation}->{'Insert Full FAQ & Link'} = '';
 
     # Template: CustomerFAQExplorer
@@ -185,13 +181,26 @@ sub Data {
 
     # Template: CustomerFAQZoom
     $Self->{Translation}->{'Article Number'} = '';
-    $Self->{Translation}->{'Search for articles with keyword'} = '';
+    $Self->{Translation}->{'Search for articles with keyword'} = 'Etsi artikkeleja hakusanalla';
 
     # Template: PublicFAQSearchOpenSearchDescriptionFAQNumber
     $Self->{Translation}->{'Public'} = 'Julkinen';
 
     # Template: PublicFAQSearchResultShort
     $Self->{Translation}->{'Back to FAQ Explorer'} = '';
+
+    # Perl Module: Kernel/Modules/AgentFAQJournal.pm
+    $Self->{Translation}->{'FAQ Journal'} = 'UKK aikajärjestys';
+
+    # Perl Module: Kernel/Modules/AgentFAQPrint.pm
+    $Self->{Translation}->{'Last update'} = '';
+    $Self->{Translation}->{'FAQ Dynamic Fields'} = '';
+
+    # Perl Module: Kernel/Modules/AgentFAQSearch.pm
+    $Self->{Translation}->{'No Result!'} = '';
+
+    # Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+    $Self->{Translation}->{'This article is empty!'} = '';
 
     # SysConfig
     $Self->{Translation}->{'A filter for HTML output to add links behind a defined string. The element Image allows two input kinds. First the name of an image (e.g. faq.png). In this case the OTRS image path will be used. The second possibility is to insert the link to the image.'} =
@@ -253,8 +262,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Defines the shown columns in the FAQ search. This option has no effect on the position of the column.'} =
         '';
-    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible.'} =
-        '';
+    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed.'} = '';
     $Self->{Translation}->{'Definition of FAQ item free text field.'} = '';
     $Self->{Translation}->{'Delete this FAQ'} = '';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ add screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
@@ -288,12 +296,10 @@ sub Data {
     $Self->{Translation}->{'Edit this FAQ'} = '';
     $Self->{Translation}->{'Enable multiple languages on FAQ module.'} = '';
     $Self->{Translation}->{'Enable voting mechanism on FAQ module.'} = '';
-    $Self->{Translation}->{'FAQ Journal'} = '';
     $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = '';
     $Self->{Translation}->{'FAQ Overview "Small" Limit'} = '';
     $Self->{Translation}->{'FAQ limit per page for FAQ Journal Overview "Small"'} = '';
     $Self->{Translation}->{'FAQ limit per page for FAQ Overview "Small"'} = '';
-    $Self->{Translation}->{'FAQ path separator.'} = '';
     $Self->{Translation}->{'FAQ search backend router of the agent interface.'} = '';
     $Self->{Translation}->{'FAQ-Area'} = '';
     $Self->{Translation}->{'Field4'} = '';
@@ -304,7 +310,7 @@ sub Data {
     $Self->{Translation}->{'Include internal fields on a FAQ based Ticket.'} = '';
     $Self->{Translation}->{'Include the name of each field in a FAQ based Ticket.'} = '';
     $Self->{Translation}->{'Interfaces where the quick search should be shown.'} = '';
-    $Self->{Translation}->{'Journal'} = '';
+    $Self->{Translation}->{'Journal'} = 'Aikajärjestys';
     $Self->{Translation}->{'Language Management'} = 'Kielten hallinta';
     $Self->{Translation}->{'Link another object to this FAQ item'} = '';
     $Self->{Translation}->{'List of state types which can be used in the agent interface.'} =
@@ -347,7 +353,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Module to generate html OpenSearch profile for short faq search.'} =
         '';
-    $Self->{Translation}->{'New FAQ Article'} = '';
+    $Self->{Translation}->{'New FAQ Article'} = 'Uusi artikkeli';
     $Self->{Translation}->{'New FAQ articles need approval before they get published.'} = '';
     $Self->{Translation}->{'Number of FAQ articles to be displayed in the FAQ Explorer of the customer interface.'} =
         '';
@@ -364,7 +370,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Parameters for the pages (in which the FAQ items are shown) of the small FAQ overview.'} =
         '';
-    $Self->{Translation}->{'Print this FAQ'} = '';
+    $Self->{Translation}->{'Print this FAQ'} = 'Tulosta artikkeli';
     $Self->{Translation}->{'Queue for the approval of FAQ articles.'} = '';
     $Self->{Translation}->{'Rates for voting. Key must be in percent.'} = '';
     $Self->{Translation}->{'Search FAQ'} = '';
@@ -413,6 +419,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Ticket body for approval of FAQ article.'} = '';
     $Self->{Translation}->{'Ticket subject for approval of FAQ article.'} = '';
+    $Self->{Translation}->{'Toolbar Item for a shortcut.'} = '';
 
 }
 

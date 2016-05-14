@@ -1,6 +1,5 @@
 # --
-# Kernel/Language/de_FAQ.pm - translation file
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -90,6 +89,9 @@ sub Data {
     $Self->{Translation}->{'FAQ Articles'} = 'FAQ-Artikel';
     $Self->{Translation}->{'No subcategories found.'} = 'Keine Unterkategorien gefunden.';
 
+    # Template: AgentFAQHistory
+    $Self->{Translation}->{'History of'} = 'Änderungsverlauf von';
+
     # Template: AgentFAQJournalOverviewSmall
     $Self->{Translation}->{'No FAQ Journal data found.'} = 'Keine FAQ-Journaldaten gefunden.';
 
@@ -112,11 +114,6 @@ sub Data {
 
     # Template: AgentFAQOverviewSmall
     $Self->{Translation}->{'No FAQ data found.'} = 'Keine FAQ-Daten gefunden.';
-
-    # Template: AgentFAQPrint
-    $Self->{Translation}->{'FAQ-Info'} = 'FAQ Informationen';
-    $Self->{Translation}->{'Votes'} = 'Bewertungen';
-    $Self->{Translation}->{'Last update'} = 'Letzte Aktualisierung';
 
     # Template: AgentFAQSearch
     $Self->{Translation}->{'Keyword'} = 'Schlüsselwort';
@@ -144,14 +141,13 @@ sub Data {
     $Self->{Translation}->{'Specific rate'} = 'bestimmter Anteil';
     $Self->{Translation}->{'e. g. Equals 25% or GreaterThan 75%'} = 'Zum Beispiel: =25% oder >75%';
     $Self->{Translation}->{'FAQ Article Create Time'} = 'Erstellzeit des FAQ-Artikel';
-    $Self->{Translation}->{'Specific date'} = 'spezifisches Datum';
-    $Self->{Translation}->{'Date range'} = 'Datumsbereich';
     $Self->{Translation}->{'FAQ Article Change Time'} = 'letzte Änderung des FAQ-Artikel';
 
     # Template: AgentFAQZoom
     $Self->{Translation}->{'FAQ Information'} = 'FAQ-Information';
     $Self->{Translation}->{'Rating'} = 'Bewertung';
     $Self->{Translation}->{'out of 5'} = 'von 5';
+    $Self->{Translation}->{'Votes'} = 'Bewertungen';
     $Self->{Translation}->{'No votes found!'} = 'Keine Bewertungen gefunden!';
     $Self->{Translation}->{'No votes found! Be the first one to rate this FAQ article.'} = 'Keine Bewertungen gefunden! Seien Sie der erste der diesen FAQ-Artikel bewertet.';
     $Self->{Translation}->{'Download Attachment'} = 'Attachment Herunterladen';
@@ -192,6 +188,19 @@ sub Data {
 
     # Template: PublicFAQSearchResultShort
     $Self->{Translation}->{'Back to FAQ Explorer'} = 'Zurück zum FAQ-Explorer';
+
+    # Perl Module: Kernel/Modules/AgentFAQJournal.pm
+    $Self->{Translation}->{'FAQ Journal'} = 'FAQ Journal';
+
+    # Perl Module: Kernel/Modules/AgentFAQPrint.pm
+    $Self->{Translation}->{'Last update'} = 'Letzte Aktualisierung';
+    $Self->{Translation}->{'FAQ Dynamic Fields'} = 'FAQ Dynamische Felder';
+
+    # Perl Module: Kernel/Modules/AgentFAQSearch.pm
+    $Self->{Translation}->{'No Result!'} = 'Kein Ergebnis!';
+
+    # Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+    $Self->{Translation}->{'This article is empty!'} = 'Dieser Artikel ist leer!';
 
     # SysConfig
     $Self->{Translation}->{'A filter for HTML output to add links behind a defined string. The element Image allows two input kinds. First the name of an image (e.g. faq.png). In this case the OTRS image path will be used. The second possibility is to insert the link to the image.'} =
@@ -246,15 +255,14 @@ sub Data {
     $Self->{Translation}->{'Defines the information to be inserted in a FAQ based Ticket. "Full FAQ" includes text, attachments and inline images.'} =
         'Definiert die Informationen, welche in ein FAQ-basierendes Ticket eingegeben werden. "Komplette FAQ" beinhaltet den Text, Anhänge und Inline-Bilder.';
     $Self->{Translation}->{'Defines the parameters for the dashboard backend. "Limit" defines the number of entries displayed by default. "Group" is used to restrict access to the plugin (e. g. Group: admin;group1;group2;). "Default" indicates if the plugin is enabled by default or if the user needs to enable it manually.'} =
-        '';
+        'Definiert die Parameter für das Übersichtsseiten-Backend. "Limit" definiert die Anzahl der Einträge, die standardmäßig angezeigt werden. "Group" wird verwendet, um den Zugriff auf das Plugin zu begrenzen (bspw. Group: admin;group1;group2;). "Default" steuert, ob das Plugin standardmäßig aktiviert ist oder ob der User es manuell aktivieren muss.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ Explorer. This option has no effect on the position of the column.'} =
         'Definert die angezeigten Spalten im FAQ-Explorer. Diese Option hat keine Auswirkung auf die Position der Spalten.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ journal. This option has no effect on the position of the column.'} =
         'Definert die angezeigten Spalten im FAQ-Journal. Diese Option hat keine Auswirkung auf die Position der Spalten.';
     $Self->{Translation}->{'Defines the shown columns in the FAQ search. This option has no effect on the position of the column.'} =
         'Definert die angezeigten Spalten in der FAQ-Suche. Diese Option hat keine Auswirkung auf die Position der Spalten.';
-    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible.'} =
-        'Definiert wo der \'FAQ Einfügen\' link angezeigt wird. Hinweis: AgentTicketActionCommon beinhaltet AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority und AgentTicketResponsible.';
+    $Self->{Translation}->{'Defines where the \'Insert FAQ\' link will be displayed.'} = 'Definiert wo der Link aus \'FAQ einfügen\' angezeigt wird.';
     $Self->{Translation}->{'Definition of FAQ item free text field.'} = 'Definition der freien Textfelder.';
     $Self->{Translation}->{'Delete this FAQ'} = 'Diese FAQ löschen!';
     $Self->{Translation}->{'Dynamic fields shown in the FAQ add screen of the agent interface. Possible settings: 0 = Disabled, 1 = Enabled, 2 = Enabled and required.'} =
@@ -288,12 +296,10 @@ sub Data {
     $Self->{Translation}->{'Edit this FAQ'} = 'FAQ bearbeiten';
     $Self->{Translation}->{'Enable multiple languages on FAQ module.'} = 'Multiple Sprachen im FAQ-Modul aktivieren.';
     $Self->{Translation}->{'Enable voting mechanism on FAQ module.'} = 'Bewertungs-Mechanismus im FAQ-Modul aktivieren.';
-    $Self->{Translation}->{'FAQ Journal'} = 'FAQ Journal';
-    $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = 'FAQ-Journal Anzaige-Limit für die Small-Ansicht';
-    $Self->{Translation}->{'FAQ Overview "Small" Limit'} = 'FAQ-Übersicht Anzeige-Limit';
+    $Self->{Translation}->{'FAQ Journal Overview "Small" Limit'} = 'FAQ-Journal Anzeige-Limit für die Small-Ansicht';
+    $Self->{Translation}->{'FAQ Overview "Small" Limit'} = 'FAQ-Übersicht "kleines" Limit';
     $Self->{Translation}->{'FAQ limit per page for FAQ Journal Overview "Small"'} = 'FAQ limit pro Seite für das FAQ-Journal in der Small-Ansicht.';
     $Self->{Translation}->{'FAQ limit per page for FAQ Overview "Small"'} = 'FAQ limit pro Seite für die Small-Ansicht.';
-    $Self->{Translation}->{'FAQ path separator.'} = 'Trennzeichen im FAQ Pfad.';
     $Self->{Translation}->{'FAQ search backend router of the agent interface.'} = 'Such-Backend-Router für die FAQ-Suche im Agenten-Interface.';
     $Self->{Translation}->{'FAQ-Area'} = 'FAQ-Bereich';
     $Self->{Translation}->{'Field4'} = 'Feld4';
@@ -413,6 +419,7 @@ sub Data {
         'Definiert, dass ein \'FAQ\'-Objekte mit dem Linktyp \'ParentChild\' mit anderen \'Ticket\'-Objekten verlinkt werden kann.';
     $Self->{Translation}->{'Ticket body for approval of FAQ article.'} = 'Body des Tickets zur Freigabe eines FAQ-Artikels.';
     $Self->{Translation}->{'Ticket subject for approval of FAQ article.'} = 'Betreff des Tickets zur Freigabe eines FAQ-Artikels.';
+    $Self->{Translation}->{'Toolbar Item for a shortcut.'} = 'Werkzeugleisteneintrag für den Schnellzugriff.';
 
 }
 

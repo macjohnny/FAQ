@@ -1,6 +1,5 @@
 # --
-# Kernel/Modules/PublicFAQ.pm - This module redirects to PublicFAQZoom
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -12,19 +11,14 @@ package Kernel::Modules::PublicFAQ;
 use strict;
 use warnings;
 
+our $ObjectManagerDisabled = 1;
+
 sub new {
     my ( $Type, %Param ) = @_;
 
     # allocate new hash for object
     my $Self = {%Param};
     bless( $Self, $Type );
-
-    # check needed objects
-    for my $Object (qw(ParamObject DBObject LayoutObject LogObject ConfigObject )) {
-        if ( !$Self->{$Object} ) {
-            $Self->{LayoutObject}->FatalError( Message => "Got no $Object!" );
-        }
-    }
 
     return $Self;
 }
@@ -34,16 +28,19 @@ sub Run {
 
     my $Redirect = $ENV{REQUEST_URI};
 
+    # get layout object
+    my $LayoutObject = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
+
     if ($Redirect) {
         $Redirect =~ s{PublicFAQ}{PublicFAQZoom}xms;
     }
     else {
-        $Redirect = $Self->{LayoutObject}->{Baselink}
+        $Redirect = $LayoutObject->{Baselink}
             . 'Action=PublicFAQZoom;ItemID='
-            . $Self->{ParamObject}->GetParam( Param => 'ItemID' );
+            . $Kernel::OM->Get('Kernel::System::Web::Request')->GetParam( Param => 'ItemID' );
     }
 
-    return $Self->{LayoutObject}->Redirect(
+    return $LayoutObject->Redirect(
         OP => $Redirect,
     );
 }

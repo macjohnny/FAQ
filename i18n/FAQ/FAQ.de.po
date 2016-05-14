@@ -1,19 +1,21 @@
 # 
 # Translators:
-# Ettore Atalan <atalanttore@googlemail.com>, 2014
+# Ettore Atalan <atalanttore@googlemail.com>, 2014-2015
+# eliasp <mail@eliasprobst.eu>, 2015
 # Mainboarder, 2014
 # Mainboarder, 2014
 # Martin Gruner <martin.gruner@otrs.com>, 2014
 # mathiasbraeunling <mathias.braeunling@otrs.com>, 2015
-# ru_otrs <robert.ullrich@otrs.com>, 2014
+# ru_otrs <robert.ullrich@otrs.com>, 2014-2015
+# Rudy R <rudy.rohde@googlemail.com>, 2015
 # ru_otrs <robert.ullrich@otrs.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2014-08-08 19:10+0200\n"
-"PO-Revision-Date: 2015-05-06 23:00+0000\n"
+"POT-Creation-Date: 2016-05-10 11:49+0000\n"
+"PO-Revision-Date: 2016-05-10 16:53+0000\n"
 "Last-Translator: Carlos Rodríguez <carlos.rodriguez@otrs.com>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/OTRS/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/otrs/OTRS/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -266,6 +268,10 @@ msgstr "FAQ-Artikel"
 msgid "No subcategories found."
 msgstr "Keine Unterkategorien gefunden."
 
+#. Template: AgentFAQHistory
+msgid "History of"
+msgstr "Änderungsverlauf von"
+
 #. Template: AgentFAQJournalOverviewSmall
 msgid "No FAQ Journal data found."
 msgstr "Keine FAQ-Journaldaten gefunden."
@@ -318,18 +324,6 @@ msgstr "FAQ-Artikel pro Seite"
 #. Template: AgentFAQOverviewSmall
 msgid "No FAQ data found."
 msgstr "Keine FAQ-Daten gefunden."
-
-#. Template: AgentFAQPrint
-msgid "FAQ-Info"
-msgstr "FAQ Informationen"
-
-#. Template: AgentFAQPrint
-msgid "Votes"
-msgstr "Bewertungen"
-
-#. Template: AgentFAQPrint
-msgid "Last update"
-msgstr "Letzte Aktualisierung"
 
 #. Template: AgentFAQSearch
 msgid "Keyword"
@@ -416,14 +410,6 @@ msgid "FAQ Article Create Time"
 msgstr "Erstellzeit des FAQ-Artikel"
 
 #. Template: AgentFAQSearchSmall
-msgid "Specific date"
-msgstr "spezifisches Datum"
-
-#. Template: AgentFAQSearchSmall
-msgid "Date range"
-msgstr "Datumsbereich"
-
-#. Template: AgentFAQSearchSmall
 msgid "FAQ Article Change Time"
 msgstr "letzte Änderung des FAQ-Artikel"
 
@@ -438,6 +424,10 @@ msgstr "Bewertung"
 #. Template: AgentFAQZoom
 msgid "out of 5"
 msgstr "von 5"
+
+#. Template: AgentFAQZoom
+msgid "Votes"
+msgstr "Bewertungen"
 
 #. Template: AgentFAQZoom
 msgid "No votes found!"
@@ -547,6 +537,26 @@ msgstr "Öffentlich"
 #. Template: PublicFAQSearchResultShort
 msgid "Back to FAQ Explorer"
 msgstr "Zurück zum FAQ-Explorer"
+
+#. Perl Module: Kernel/Modules/AgentFAQJournal.pm
+msgid "FAQ Journal"
+msgstr "FAQ Journal"
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "Last update"
+msgstr "Letzte Aktualisierung"
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "FAQ Dynamic Fields"
+msgstr "FAQ Dynamische Felder"
+
+#. Perl Module: Kernel/Modules/AgentFAQSearch.pm
+msgid "No Result!"
+msgstr "Kein Ergebnis!"
+
+#. Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+msgid "This article is empty!"
+msgstr "Dieser Artikel ist leer!"
 
 #. SysConfig
 msgid ""
@@ -707,7 +717,7 @@ msgid ""
 " to the plugin (e. g. Group: admin;group1;group2;). \"Default\" indicates if"
 " the plugin is enabled by default or if the user needs to enable it "
 "manually."
-msgstr ""
+msgstr "Definiert die Parameter für das Übersichtsseiten-Backend. \"Limit\" definiert die Anzahl der Einträge, die standardmäßig angezeigt werden. \"Group\" wird verwendet, um den Zugriff auf das Plugin zu begrenzen (bspw. Group: admin;group1;group2;). \"Default\" steuert, ob das Plugin standardmäßig aktiviert ist oder ob der User es manuell aktivieren muss."
 
 #. SysConfig
 msgid ""
@@ -728,12 +738,8 @@ msgid ""
 msgstr "Definert die angezeigten Spalten in der FAQ-Suche. Diese Option hat keine Auswirkung auf die Position der Spalten."
 
 #. SysConfig
-msgid ""
-"Defines where the 'Insert FAQ' link will be displayed. Note: "
-"AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, "
-"AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, "
-"AgentTicketPriority and AgentTicketResponsible."
-msgstr "Definiert wo der 'FAQ Einfügen' link angezeigt wird. Hinweis: AgentTicketActionCommon beinhaltet AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority und AgentTicketResponsible."
+msgid "Defines where the 'Insert FAQ' link will be displayed."
+msgstr "Definiert wo der Link aus 'FAQ einfügen' angezeigt wird."
 
 #. SysConfig
 msgid "Definition of FAQ item free text field."
@@ -843,16 +849,12 @@ msgid "Enable voting mechanism on FAQ module."
 msgstr "Bewertungs-Mechanismus im FAQ-Modul aktivieren."
 
 #. SysConfig
-msgid "FAQ Journal"
-msgstr "FAQ Journal"
-
-#. SysConfig
 msgid "FAQ Journal Overview \"Small\" Limit"
-msgstr "FAQ-Journal Anzaige-Limit für die Small-Ansicht"
+msgstr "FAQ-Journal Anzeige-Limit für die Small-Ansicht"
 
 #. SysConfig
 msgid "FAQ Overview \"Small\" Limit"
-msgstr "FAQ-Übersicht Anzeige-Limit"
+msgstr "FAQ-Übersicht \"kleines\" Limit"
 
 #. SysConfig
 msgid "FAQ limit per page for FAQ Journal Overview \"Small\""
@@ -861,10 +863,6 @@ msgstr "FAQ limit pro Seite für das FAQ-Journal in der Small-Ansicht."
 #. SysConfig
 msgid "FAQ limit per page for FAQ Overview \"Small\""
 msgstr "FAQ limit pro Seite für die Small-Ansicht."
-
-#. SysConfig
-msgid "FAQ path separator."
-msgstr "Trennzeichen im FAQ Pfad."
 
 #. SysConfig
 msgid "FAQ search backend router of the agent interface."
@@ -1239,3 +1237,7 @@ msgstr "Body des Tickets zur Freigabe eines FAQ-Artikels."
 #. SysConfig
 msgid "Ticket subject for approval of FAQ article."
 msgstr "Betreff des Tickets zur Freigabe eines FAQ-Artikels."
+
+#. SysConfig
+msgid "Toolbar Item for a shortcut."
+msgstr "Werkzeugleisteneintrag für den Schnellzugriff."

@@ -1,6 +1,5 @@
 // --
-// FAQ.Agent.FAQZoom.js - provides the special module functions for FAQZoom
-// Copyright (C) 2001-2012 OTRS AG, http://otrs.org/
+// Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 // --
 // This software comes with ABSOLUTELY NO WARRANTY. For details, see
 // the enclosed file COPYING for license information (AGPL). If you
@@ -21,36 +20,38 @@ FAQ.Agent = FAQ.Agent || {};
 FAQ.Agent.FAQZoom = (function (TargetNS) {
 
     /**
+     * @name IframeAutoHeight
+     * @memberof FAQ.Agent.FAQZoom
      * @function
-     * @param {jQueryObject} $Iframe The iframe which should be auto-heighted
-     * @return nothing
-     *      This function initializes the special module functions
+     * @param {jQueryObject} $Iframe - The iframe which should be auto-heighted
+     * @description
+     *      Set iframe height automatically based on real content height and default config setting.
      */
     TargetNS.IframeAutoHeight = function ($Iframe) {
+        var NewHeight;
 
         if (isJQueryObject($Iframe)) {
-            var NewHeight = $Iframe
-                .contents()
-                .find('html')
-                .height();
+            // slightly change the width of the iframe to not be exactly 100% width anymore
+            // this prevents a double horizontal scrollbar (from iframe and surrounding div)
+            $Iframe.width($Iframe.width() - 2);
 
-            // IE8 needs some more space due to incorrect height calculation
-            if (NewHeight > 0 && $.browser.msie && $.browser.version === '8.0') {
-                NewHeight = NewHeight + 4;
-            }
+            NewHeight = $Iframe.contents().find('body').height();
 
             // if the iFrames height is 0, we collapse the widget
             if (NewHeight === 0) {
                 $Iframe.closest('.WidgetSimple').removeClass('Expanded').addClass('Collapsed');
-            }
-
-            if (!NewHeight || isNaN(NewHeight)) {
+            } else if (!NewHeight || isNaN(NewHeight)) {
                 NewHeight = Core.Config.Get('FAQ::Frontend::AgentHTMLFieldHeightDefault');
             }
             else {
                 if (NewHeight > Core.Config.Get('FAQ::Frontend::AgentHTMLFieldHeightMax')) {
                     NewHeight = Core.Config.Get('FAQ::Frontend::AgentHTMLFieldHeightMax');
                 }
+            }
+
+            // add delta for scrollbar
+            if (NewHeight > 0) {
+                NewHeight = parseInt(NewHeight, 10) + 25;
             }
             $Iframe.height(NewHeight + 'px');
         }

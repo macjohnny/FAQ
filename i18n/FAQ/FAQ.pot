@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: FAQ\n"
-"POT-Creation-Date: 2014-08-08 19:10+0200\n"
+"POT-Creation-Date: 2016-05-10 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -254,6 +254,10 @@ msgstr ""
 msgid "No subcategories found."
 msgstr ""
 
+#. Template: AgentFAQHistory
+msgid "History of"
+msgstr ""
+
 #. Template: AgentFAQJournalOverviewSmall
 msgid "No FAQ Journal data found."
 msgstr ""
@@ -304,18 +308,6 @@ msgstr ""
 
 #. Template: AgentFAQOverviewSmall
 msgid "No FAQ data found."
-msgstr ""
-
-#. Template: AgentFAQPrint
-msgid "FAQ-Info"
-msgstr ""
-
-#. Template: AgentFAQPrint
-msgid "Votes"
-msgstr ""
-
-#. Template: AgentFAQPrint
-msgid "Last update"
 msgstr ""
 
 #. Template: AgentFAQSearch
@@ -403,14 +395,6 @@ msgid "FAQ Article Create Time"
 msgstr ""
 
 #. Template: AgentFAQSearchSmall
-msgid "Specific date"
-msgstr ""
-
-#. Template: AgentFAQSearchSmall
-msgid "Date range"
-msgstr ""
-
-#. Template: AgentFAQSearchSmall
 msgid "FAQ Article Change Time"
 msgstr ""
 
@@ -424,6 +408,10 @@ msgstr ""
 
 #. Template: AgentFAQZoom
 msgid "out of 5"
+msgstr ""
+
+#. Template: AgentFAQZoom
+msgid "Votes"
 msgstr ""
 
 #. Template: AgentFAQZoom
@@ -528,6 +516,26 @@ msgstr ""
 
 #. Template: PublicFAQSearchResultShort
 msgid "Back to FAQ Explorer"
+msgstr ""
+
+#. Perl Module: Kernel/Modules/AgentFAQJournal.pm
+msgid "FAQ Journal"
+msgstr ""
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "Last update"
+msgstr ""
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "FAQ Dynamic Fields"
+msgstr ""
+
+#. Perl Module: Kernel/Modules/AgentFAQSearch.pm
+msgid "No Result!"
+msgstr ""
+
+#. Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+msgid "This article is empty!"
 msgstr ""
 
 #. SysConfig
@@ -667,7 +675,7 @@ msgid "Defines the shown columns in the FAQ search. This option has no effect on
 msgstr ""
 
 #. SysConfig
-msgid "Defines where the 'Insert FAQ' link will be displayed. Note: AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, AgentTicketPriority and AgentTicketResponsible."
+msgid "Defines where the 'Insert FAQ' link will be displayed."
 msgstr ""
 
 #. SysConfig
@@ -747,10 +755,6 @@ msgid "Enable voting mechanism on FAQ module."
 msgstr ""
 
 #. SysConfig
-msgid "FAQ Journal"
-msgstr ""
-
-#. SysConfig
 msgid "FAQ Journal Overview \"Small\" Limit"
 msgstr ""
 
@@ -764,10 +768,6 @@ msgstr ""
 
 #. SysConfig
 msgid "FAQ limit per page for FAQ Overview \"Small\""
-msgstr ""
-
-#. SysConfig
-msgid "FAQ path separator."
 msgstr ""
 
 #. SysConfig
@@ -1068,5 +1068,9 @@ msgstr ""
 
 #. SysConfig
 msgid "Ticket subject for approval of FAQ article."
+msgstr ""
+
+#. SysConfig
+msgid "Toolbar Item for a shortcut."
 msgstr ""
 

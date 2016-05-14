@@ -1,14 +1,15 @@
 # 
 # Translators:
+# Hisatoshi Onishi <hisatoshi.onishi@gmail.com>, 2016
 # Kentaro Hori <kentaro0919@gmail.com>, 2014-2015
 # Norihiro Tanaka <noritnk@kcn.ne.jp>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2014-08-08 19:10+0200\n"
-"PO-Revision-Date: 2015-05-06 23:00+0000\n"
+"POT-Creation-Date: 2016-05-10 11:49+0000\n"
+"PO-Revision-Date: 2016-05-10 16:53+0000\n"
 "Last-Translator: Carlos Rodríguez <carlos.rodriguez@otrs.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/OTRS/language/ja/)\n"
+"Language-Team: Japanese (http://www.transifex.com/otrs/OTRS/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -261,6 +262,10 @@ msgstr "FAQ項目"
 msgid "No subcategories found."
 msgstr "子カテゴリはありません。"
 
+#. Template: AgentFAQHistory
+msgid "History of"
+msgstr "履歴: "
+
 #. Template: AgentFAQJournalOverviewSmall
 msgid "No FAQ Journal data found."
 msgstr "ジャーナルの情報がありません。"
@@ -314,18 +319,6 @@ msgstr "ページ毎の記事数"
 msgid "No FAQ data found."
 msgstr "FAQデータはありません。"
 
-#. Template: AgentFAQPrint
-msgid "FAQ-Info"
-msgstr "FAQ情報"
-
-#. Template: AgentFAQPrint
-msgid "Votes"
-msgstr "Votes"
-
-#. Template: AgentFAQPrint
-msgid "Last update"
-msgstr "最終更新日"
-
 #. Template: AgentFAQSearch
 msgid "Keyword"
 msgstr "キーワード"
@@ -336,7 +329,7 @@ msgstr "投票 (例. 10に等しい あるいは 60より大きい)"
 
 #. Template: AgentFAQSearch
 msgid "Rate (e. g. Equals 25% or GreaterThan 75%)"
-msgstr "レート (例. 25%に等しい あるいは 75より大きい)"
+msgstr "レート (例. 25%に等しい あるいは 75%より大きい)"
 
 #. Template: AgentFAQSearch
 msgid "Approved"
@@ -348,19 +341,19 @@ msgstr "最終更新者"
 
 #. Template: AgentFAQSearch
 msgid "FAQ Article Create Time (before/after)"
-msgstr "FAQ項目作成日時 (以前/以後)"
+msgstr "FAQ項目作成日時 (範囲指定)"
 
 #. Template: AgentFAQSearch
 msgid "FAQ Article Create Time (between)"
-msgstr "FAQ項目作成日時 (間)"
+msgstr "FAQ項目作成日時 (期間指定)"
 
 #. Template: AgentFAQSearch
 msgid "FAQ Article Change Time (before/after)"
-msgstr "FAQ項目変更日時 (以前/以後)"
+msgstr "FAQ項目変更日時 (範囲指定)"
 
 #. Template: AgentFAQSearch
 msgid "FAQ Article Change Time (between)"
-msgstr "FAQ項目変更日時 (間)"
+msgstr "FAQ項目変更日時 (期間指定)"
 
 #. Template: AgentFAQSearchOpenSearchDescriptionFulltext
 msgid "FAQFulltext"
@@ -388,7 +381,7 @@ msgstr "特定の投票"
 
 #. Template: AgentFAQSearchSmall
 msgid "e. g. Equals 10 or GreaterThan 60"
-msgstr "例. 10 に等しいまたは 60 より大きい"
+msgstr "例. 10 に等しい あるいは 60 より大きい"
 
 #. Template: AgentFAQSearchSmall
 msgid "Rate"
@@ -404,19 +397,11 @@ msgstr "特定のレート"
 
 #. Template: AgentFAQSearchSmall
 msgid "e. g. Equals 25% or GreaterThan 75%"
-msgstr "例. 25%以上または75%以上"
+msgstr "例. 25%に等しい あるいは 75%以上"
 
 #. Template: AgentFAQSearchSmall
 msgid "FAQ Article Create Time"
 msgstr "FAQ項目作成時間"
-
-#. Template: AgentFAQSearchSmall
-msgid "Specific date"
-msgstr "特定の日付"
-
-#. Template: AgentFAQSearchSmall
-msgid "Date range"
-msgstr "日付の範囲"
 
 #. Template: AgentFAQSearchSmall
 msgid "FAQ Article Change Time"
@@ -435,12 +420,16 @@ msgid "out of 5"
 msgstr "5つ星のうち"
 
 #. Template: AgentFAQZoom
+msgid "Votes"
+msgstr "Votes"
+
+#. Template: AgentFAQZoom
 msgid "No votes found!"
 msgstr "投票はありません。"
 
 #. Template: AgentFAQZoom
 msgid "No votes found! Be the first one to rate this FAQ article."
-msgstr "投票はありません。この記事に始めて評価を投票しましょう。"
+msgstr "投票はありません。この記事に最初の評価を投票しましょう。"
 
 #. Template: AgentFAQZoom
 msgid "Download Attachment"
@@ -542,6 +531,26 @@ msgstr "公開"
 #. Template: PublicFAQSearchResultShort
 msgid "Back to FAQ Explorer"
 msgstr "FAQエクスプローラーに戻る"
+
+#. Perl Module: Kernel/Modules/AgentFAQJournal.pm
+msgid "FAQ Journal"
+msgstr "FAQ ジャーナル"
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "Last update"
+msgstr "最終更新日"
+
+#. Perl Module: Kernel/Modules/AgentFAQPrint.pm
+msgid "FAQ Dynamic Fields"
+msgstr "FAQ ダイナミック・フィールド"
+
+#. Perl Module: Kernel/Modules/AgentFAQSearch.pm
+msgid "No Result!"
+msgstr "結果がありません。"
+
+#. Perl Module: Kernel/Output/HTML/Layout/FAQ.pm
+msgid "This article is empty!"
+msgstr "この記事は空です!"
 
 #. SysConfig
 msgid ""
@@ -653,37 +662,37 @@ msgstr "公開画面（FAQ一覧）における、FAQ検索結果並び替えに
 msgid ""
 "Defines the default FAQ order in the FAQ Explorer result of the agent "
 "interface. Up: oldest on top. Down: latest on top."
-msgstr "担当者インターフェイスにおける、FAQ一覧の表示順の既定値を定義します。'Up'→古い順 / 'Down'→新しい順"
+msgstr "担当者インターフェイスにおける、FAQ一覧の表示順の既定値を定義します。Up: 古い順 / Down: 新しい順"
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order in the FAQ Explorer result of the customer "
 "interface. Up: oldest on top. Down: latest on top."
-msgstr "顧客用画面における、FAQ一覧の表示順の既定値を定義します。'Up'→古い順 / 'Down'→新しい順"
+msgstr "顧客用画面における、FAQ一覧の表示順の既定値を定義します。Up: 古い順 / Down: 新しい順"
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order in the FAQ Explorer result of the public "
 "interface. Up: oldest on top. Down: latest on top."
-msgstr "公開画面における、FAQ一覧の表示順の既定値を定義します。'Up'→古い順 / 'Down'→新しい順"
+msgstr "公開画面における、FAQ一覧の表示順の既定値を定義します。Up: 古い順 / Down: 新しい順"
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order of a search result in the agent interface. Up:"
 " oldest on top. Down: latest on top."
-msgstr "担当者インターフェイス（FAQ一覧）における、FAQ検索結果並び順の既定値を定義します。'Up'→古い順 / 'Down'→新しい順"
+msgstr "担当者インターフェイス（FAQ一覧）における、FAQ検索結果並び順の既定値を定義します。Up: 古い順 / Down: 新しい順"
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order of a search result in the customer interface. "
 "Up: oldest on top. Down: latest on top."
-msgstr "顧客用画面における、FAQ検索結果並び順の既定値を定義します。'Up'→古い順 / 'Down'→新しい順"
+msgstr "顧客用画面における、FAQ検索結果並び順の既定値を定義します。Up: 古い順 / Down: 新しい順"
 
 #. SysConfig
 msgid ""
 "Defines the default FAQ order of a search result in the public interface. "
 "Up: oldest on top. Down: latest on top."
-msgstr "公開画面における、FAQ検索結果並び順の既定値を定義します。'Up'→古い順 / 'Down'→新しい順"
+msgstr "公開画面における、FAQ検索結果並び順の既定値を定義します。Up: 古い順 / Down: 新しい順"
 
 #. SysConfig
 msgid "Defines the default shown FAQ search attribute for FAQ search screen."
@@ -702,7 +711,7 @@ msgid ""
 " to the plugin (e. g. Group: admin;group1;group2;). \"Default\" indicates if"
 " the plugin is enabled by default or if the user needs to enable it "
 "manually."
-msgstr ""
+msgstr "ダッシュボードのバックエンドパラメータを定義。「Limit リミット」は標準で表示されるエントリーを定義します。「Group グループ」はプラグインへのアクセスを制限します。(例. Group: admin;group1;group2)。「Default　デフォルト」はプラグインが標準で有効になっているか、ユーザーが手動で有効にする必要があるかを定義します。"
 
 #. SysConfig
 msgid ""
@@ -723,12 +732,8 @@ msgid ""
 msgstr "公開画面における、FAQ一覧での表示項目の設定。この設定によって項目の並び順を制御することはできません。"
 
 #. SysConfig
-msgid ""
-"Defines where the 'Insert FAQ' link will be displayed. Note: "
-"AgentTicketActionCommon includes AgentTicketNote, AgentTicketClose, "
-"AgentTicketFreeText, AgentTicketOwner, AgentTicketPending, "
-"AgentTicketPriority and AgentTicketResponsible."
-msgstr "「[FAQを挿入する]リンクが表示される箇所を定義します。注釈：AgentTicketActionCommonにはAgentTicketNote、AgentTicketClose、AgentTicketFreeText、AgentTicketOwner、AgentTicketPending、AgentTicketPriorityとAgentTicketResponsibleが含まれています。"
+msgid "Defines where the 'Insert FAQ' link will be displayed."
+msgstr "FAQリンクがどこに表示されるか定義する"
 
 #. SysConfig
 msgid "Definition of FAQ item free text field."
@@ -766,19 +771,19 @@ msgstr "公開インターフェイスのFAQ追加画面で表示される動的
 msgid ""
 "Dynamic fields shown in the FAQ print screen of the agent interface. "
 "Possible settings: 0 = Disabled, 1 = Enabled."
-msgstr "担当者インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効, 2 = 有効 さらに 必須"
+msgstr "担当者インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効"
 
 #. SysConfig
 msgid ""
 "Dynamic fields shown in the FAQ print screen of the customer interface. "
 "Possible settings: 0 = Disabled, 1 = Enabled."
-msgstr "顧客インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効, 2 = 有効 さらに 必須"
+msgstr "顧客インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効"
 
 #. SysConfig
 msgid ""
 "Dynamic fields shown in the FAQ print screen of the public interface. "
 "Possible settings: 0 = Disabled, 1 = Enabled."
-msgstr "公開インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効, 2 = 有効 さらに 必須"
+msgstr "公開インターフェイスのFAQ印刷画面で表示される動的領域。 選択可能な設定値: 0 = 無効, 1 = 有効"
 
 #. SysConfig
 msgid ""
@@ -838,10 +843,6 @@ msgid "Enable voting mechanism on FAQ module."
 msgstr "評価の機能を有効にする"
 
 #. SysConfig
-msgid "FAQ Journal"
-msgstr "FAQ ジャーナル"
-
-#. SysConfig
 msgid "FAQ Journal Overview \"Small\" Limit"
 msgstr "FAQジャーナル一覧(S)の表示数"
 
@@ -856,10 +857,6 @@ msgstr "FAQジャーナル一覧(S)の1ページ毎の表示数"
 #. SysConfig
 msgid "FAQ limit per page for FAQ Overview \"Small\""
 msgstr "FAQ一覧(S)の1ページ毎の表示数"
-
-#. SysConfig
-msgid "FAQ path separator."
-msgstr "パスインフォを使用する際のセパレータ文字（例：'/'）"
 
 #. SysConfig
 msgid "FAQ search backend router of the agent interface."
@@ -1234,3 +1231,7 @@ msgstr "FAQ承認チケット用　チケット本文"
 #. SysConfig
 msgid "Ticket subject for approval of FAQ article."
 msgstr "FAQ承認チケット用　チケット件名 "
+
+#. SysConfig
+msgid "Toolbar Item for a shortcut."
+msgstr "ショートカットのためのツールバー・アイテムです。"

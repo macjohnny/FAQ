@@ -1,12 +1,12 @@
 # --
-# FAQ.t - FAQ tests
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
 
+## no critic (Modules::RequireExplicitPackage)
 use strict;
 use warnings;
 
@@ -18,18 +18,19 @@ my $FAQObject   = $Kernel::OM->Get('Kernel::System::FAQ');
 my $CacheObject = $Kernel::OM->Get('Kernel::System::Cache');
 
 my $FAQID = $FAQObject->FAQAdd(
-    Title      => 'Some Text',
-    CategoryID => 1,
-    StateID    => 1,
-    LanguageID => 1,
-    Keywords   => 'some keywords',
-    Field1     => 'Problem...',
-    Field2     => 'Solution...',
-    UserID     => 1,
+    Title       => 'Some Text',
+    CategoryID  => 1,
+    StateID     => 1,
+    LanguageID  => 1,
+    Keywords    => 'some keywords',
+    Field1      => 'Problem...',
+    Field2      => 'Solution...',
+    ContentType => 'text/html',
+    UserID      => 1,
 );
-
-$Self->True(
+$Self->IsNot(
     $FAQID,
+    undef,
     "FAQAdd() - 1",
 );
 
@@ -40,13 +41,14 @@ my %FAQ = $FAQObject->FAQGet(
 );
 
 my %FAQTest = (
-    Title      => 'Some Text',
-    CategoryID => 1,
-    StateID    => 1,
-    LanguageID => 1,
-    Keywords   => 'some keywords',
-    Field1     => 'Problem...',
-    Field2     => 'Solution...',
+    Title       => 'Some Text',
+    CategoryID  => 1,
+    StateID     => 1,
+    LanguageID  => 1,
+    Keywords    => 'some keywords',
+    Field1      => 'Problem...',
+    Field2      => 'Solution...',
+    ContentType => 'text/html',
 );
 
 for my $Test ( sort keys %FAQTest ) {
@@ -58,16 +60,17 @@ for my $Test ( sort keys %FAQTest ) {
 }
 
 my $FAQUpdate = $FAQObject->FAQUpdate(
-    ItemID     => $FAQID,
-    CategoryID => 1,
-    StateID    => 2,
-    LanguageID => 2,
-    Approved   => 1,
-    Title      => 'Some Text2',
-    Keywords   => 'some keywords2',
-    Field1     => 'Problem...2',
-    Field2     => 'Solution found...2',
-    UserID     => 1,
+    ItemID      => $FAQID,
+    CategoryID  => 1,
+    StateID     => 2,
+    LanguageID  => 2,
+    Approved    => 1,
+    Title       => 'Some Text2',
+    Keywords    => 'some keywords2',
+    Field1      => 'Problem...2',
+    Field2      => 'Solution found...2',
+    UserID      => 1,
+    ContentType => 'text/plain',
 );
 
 %FAQ = $FAQObject->FAQGet(
@@ -77,13 +80,14 @@ my $FAQUpdate = $FAQObject->FAQUpdate(
 );
 
 %FAQTest = (
-    Title      => 'Some Text2',
-    CategoryID => 1,
-    StateID    => 2,
-    LanguageID => 2,
-    Keywords   => 'some keywords2',
-    Field1     => 'Problem...2',
-    Field2     => 'Solution found...2',
+    Title       => 'Some Text2',
+    CategoryID  => 1,
+    StateID     => 2,
+    LanguageID  => 2,
+    Keywords    => 'some keywords2',
+    Field1      => 'Problem...2',
+    Field2      => 'Solution found...2',
+    ContentType => 'text/plain',
 );
 
 for my $Test ( sort keys %FAQTest ) {
@@ -123,14 +127,15 @@ $Self->Is(
 );
 
 my $FAQID2 = $FAQObject->FAQAdd(
-    Title      => 'Title',
-    CategoryID => 1,
-    StateID    => 1,
-    LanguageID => 1,
-    Keywords   => '',
-    Field1     => 'Problem Description 1...',
-    Field2     => 'Solution not found1...',
-    UserID     => 1,
+    Title       => 'Title',
+    CategoryID  => 1,
+    StateID     => 1,
+    LanguageID  => 1,
+    Keywords    => '',
+    Field1      => 'Problem Description 1...',
+    Field2      => 'Solution not found1...',
+    ContentType => 'text/html',
+    UserID      => 1,
 );
 
 $Self->True(
@@ -406,7 +411,8 @@ $FAQID = $FAQObject->FAQAdd(
     LanguageID => 1,
     Keywords   => 'some keywords',
     %TestFields,
-    UserID => 1,
+    ContentType => 'text/html',
+    UserID      => 1,
 );
 
 $Self->True(
@@ -497,7 +503,8 @@ $FAQUpdate = $FAQObject->FAQUpdate(
     LanguageID => 1,
     Keywords   => 'some keywords',
     %UpdatedTestFields,
-    UserID => 1,
+    ContentType => 'text/html',
+    UserID      => 1,
 );
 
 $Self->True(
@@ -537,7 +544,8 @@ $FAQID = $FAQObject->FAQAdd(
     LanguageID => 1,
     Keywords   => 'some keywords',
     %TestFields,
-    UserID => 1,
+    ContentType => 'text/html',
+    UserID      => 1,
 );
 
 # check that cache is clean
@@ -755,6 +763,245 @@ $Self->Is(
 );
 
 # -------------------------
+
+# ContentTypeSet() tests
+
+my $FAQItemID1 = $FAQObject->FAQAdd(
+    Title       => 'Some Text',
+    CategoryID  => 1,
+    StateID     => 1,
+    LanguageID  => 1,
+    Field1      => 'Symptom...',    # (optional)
+    ValidID     => 1,
+    ContentType => 'text/plain',    # or 'text/html'
+    UserID      => 1,
+);
+$Self->IsNot(
+    undef,
+    $FAQItemID1,
+    "FAQAdd()"
+);
+
+my @Tests = (
+    {
+        Name   => 'Text with <br />',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => 'Symptom <br />',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </li>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<li>Symptom </li>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </ol>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<ol>Symptom </ol>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </ul>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<ul>Symptom </ul>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </table>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<table>Symptom </table>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </tr>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<tr>Symptom </tr>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </td>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<td>Symptom </td>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </td>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<td>Symptom </td>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </div>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<div>Symptom </div>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </o>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<o>Symptom </o>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </span>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<span>Symptom </span>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </p>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<p>Symptom </p>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </pre>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<pre>Symptom </pre>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </h1>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<h1>Symptom </h1>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with </h9>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<h9>Symptom </h9>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/html',
+    },
+    {
+        Name   => 'Text with out HTML tags',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => 'Symptom ',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/plain',
+    },
+    {
+        Name   => 'Text with </u>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<u>Symptom </u>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/plain',
+    },
+    {
+        Name   => 'Text with </dib>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<dib>Symptom </dib>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/plain',
+    },
+    {
+        Name   => 'Text with </spam>',
+        ItemID => $FAQItemID1,
+        Update => {
+            Field1      => '<spam>Symptom </spam>',
+            ContentType => 'text/plain',
+        },
+        ExpectedResultAuto => 'text/plain',
+    },
+);
+
+for my $Test (@Tests) {
+    for my $ContentTypeRaw (qw(auto text/plain text/html)) {
+
+        my $ContentType = $ContentTypeRaw eq 'auto' ? '' : $ContentTypeRaw;
+
+        my %FAQData = $FAQObject->FAQGet(
+            ItemID => $Test->{ItemID},
+            UserID => 1,
+        );
+
+        my $FAQUpdate = $FAQObject->FAQUpdate(
+            %FAQData,
+            %{ $Test->{Update} },
+            ItemID => $Test->{ItemID},
+            UserID => 1,
+        );
+
+        my $Success = $FAQObject->FAQContentTypeSet(
+            FAQItemIDs  => [ $Test->{ItemID} ],
+            ContentType => $ContentType,
+        );
+
+        my $ExpectedResult = $ContentTypeRaw eq 'auto' ? $Test->{ExpectedResultAuto} : $ContentType;
+
+        %FAQData = $FAQObject->FAQGet(
+            ItemID => $Test->{ItemID},
+            UserID => 1,
+        );
+
+        $Self->Is(
+            $FAQData{ContentType},
+            $ExpectedResult,
+            "$Test->{Name} - ContentType after set to $ContentTypeRaw",
+        );
+    }
+}
+
+$FAQDelete = $FAQObject->FAQDelete(
+    ItemID => $FAQItemID1,
+    UserID => 1,
+);
+
+$Self->True(
+    $FAQDelete,
+    "FAQDelete(): with True ($FAQItemID1)",
+);
 
 # clean the system
 $FAQDelete = $FAQObject->FAQDelete(
